@@ -29,7 +29,7 @@ export const getText = async ({ textId = '' }: { textId?: string }): Promise<GET
 // sound data 조회
 export type GETSOUND = { soundId: string; soundDivisionCode: string; duration: string; extension: 'mp3'; size: string; reference: string; tags: string };
 export const getSound = async (): Promise<GETSOUND[]> => {
-    const result = await axios.get('${process.env.REACT_APP_SOL}/editor/sound/D1', getConfigure());
+    const result = await axios.get(`${process.env.REACT_APP_SOL}/editor/sound/D1`, getConfigure());
     return result.data;
 };
 
@@ -44,7 +44,7 @@ export const getLearningFeedback = (): Promise<
         feedbackConfig: { title: { ko: string; en: string }; message: { ko: string; en: string }; sound: { ko: string; en: string }; image: string };
         description: string;
     }[]
-> => axios.get('${process.env.REACT_APP_SOL}//learning/feedback/D1', getConfigure()).then((r) => r.data);
+> => axios.get(`${process.env.REACT_APP_SOL}//learning/feedback/D1`, getConfigure()).then((r) => r.data);
 
 const getConfigure = () => {
     const accessToken = 'rE_M6Kmix3p7mqOLaXAe';

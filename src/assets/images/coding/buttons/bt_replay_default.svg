@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="65" viewBox="0 0 192 65">
+  <g id="bt_replay_default" transform="translate(-235.5 -663.35)">
+    <g id="그룹_843" data-name="그룹 843" transform="translate(61.5 -14.65)">
+      <g id="사각형_891" data-name="사각형 891" transform="translate(174 678)" fill="#aa5c22" stroke="#aa5c22" stroke-width="1">
+        <rect width="192" height="65" rx="30" stroke="none"/>
+        <rect x="0.5" y="0.5" width="191" height="64" rx="29.5" fill="none"/>
+      </g>
+      <path id="패스_1264" data-name="패스 1264" d="M237.125,419.83a25.008,25.008,0,1,1,0-50.016H368.153a25.008,25.008,0,0,1,0,50.016Z" transform="translate(-33.117 313.828)" fill="#d18b4b"/>
+      <path id="패스_1265" data-name="패스 1265" d="M367.707,371.423a22.953,22.953,0,0,1,0,45.907H236.681a22.953,22.953,0,1,1,0-45.907Zm0-4.109H236.681a27.063,27.063,0,1,0,0,54.125H367.707a27.063,27.063,0,0,0,0-54.125" transform="translate(-32.33 314.273)" fill="#e7a85d"/>
+      <path id="패스_1266" data-name="패스 1266" d="M366.995,366.6a27.063,27.063,0,0,1,0,54.125H235.968a27.063,27.063,0,1,1,0-54.125Zm0-3.287H235.968a30.35,30.35,0,1,0,0,60.7H366.995a30.35,30.35,0,1,0,0-60.7" transform="translate(-31.617 314.986)" fill="#aa5c22"/>
+      <text id="다시_해보기" data-name="다시 해보기" transform="translate(220.021 715.65)" fill="#aa5c22" stroke="#aa5c22" stroke-width="4" font-size="21" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">다시 해보기</tspan></text>
+      <text id="다시_해보기-2" data-name="다시 해보기" transform="translate(220.021 715.65)" fill="#fff" font-size="21" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">다시 해보기</tspan></text>
+    </g>
+  </g>
+</svg>

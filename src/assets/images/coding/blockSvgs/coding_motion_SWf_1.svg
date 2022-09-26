@@ -1,0 +1,32 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 323 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternMotion2" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#0642ff"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#0a5bff"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#0642ff"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#0a5bff"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" class="motion2" fill="#0d6aff"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+            <path stroke="#0037a5" fill="#0a5bff" style="fill:url(#patternMotion2)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 256.0778045654297 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -256.0778045654297  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+            <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#0d6aff" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 256.0778045654297  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+            <path fill="#0037a5" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+            <path fill="#0037a5"></path>
+        <g transform="translate(65,16.5)">
+            <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">앞으로 1 칸 헤엄치기</text>
+        </g>
+        <g transform="translate(274.0778045654297,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAACXBIWXMAABYlAAAWJQFJUiTwAAAKhUlEQVR4nOVcPXAbxxV+dwdSpCSLFMVI1I9FyJacuMiIroIijpjSaUxP4hRsBKZ3xLRyIaqIUpqye5ssgsnEmTHchFUmVJICncg0mViKRcSUKcggCMikgJAA1vMtdync7v3jhwTzzdyIuru9vfvw3tv33r5dgzFG+wEjkRokojFxDDb864YlIiqKf5dYZnJlX967k4QZidQEEY2L42qTjysR0aI40p0isO2ECZLkMdDGrpaJaA4Hy0wW29VJWwgT6pYkomkiGm15B/6YJ6KZdkhdywkzEqkZQVRAaTLKZPQ8JTpiknGk7nxPLUZsq0rE+ojtnAnxOi0nrmWEGYnUuFAJH4myNsg4uknmqZfJ6CMyesN3xjaJ6t/miD2rEvvf+QAt7grimlbVpgkT6gei3va4q0zmyS0yTw2T0d9UfzpqRPVSmeq5LWI7wx43ZiH5LDOZbqa3pggTUpV2Vz+rRNbZXjIH+oms6G8ZFKxMVM/lqP7MS23vsszkdNQuIhNmJFLo9AOXqxWyzjMyh1otTsHAtolqq3lim24ShxF1PIqKRiLMSKSggtcdL5pDebLODndEovwAW1fNlohqThpQEqQthXlkKMKEvZp1JssqUWx0gIzjYT+rzagR1dbyVC84SVto0syQL5t2JMs4nqeeHxxAsgCLyLowTNbocz742AHJWzQSqbGgTwssYa5qaH4Phr2dHnzrgEGh+rDC/Tk7AktaIMJcybIulPfNsEdGjaj6oEBse0h5Akgb83NyfVXSSKSSh4cs2lXR2JUhMnoLygVoSVrYaVd4EiZ0e1bvs1vJkhCkYaCy46rj9zbAT8LmNKfUHCh0N1kSIO2VAYeB4LrIsDjClTARRNtzVkZfnqxRVfe7FwjTrItORnzOTTUdCTMSqTgR3VLOVij2qles1p0wB45yZ9sOaNVMYMKEKtphXawfCO+9HdiNTFR7dsPJP9MIEwH1NfvJvjz/JQ4tYM9GnXxJbQBwkjBdFK344VNFFYhSELHYcU0I0B5shDlKl3kiFynJ141ACKUj6UqYenH3jnNhUsLdDQgGBMSO62IQ5IjJP8Qwavfod6WrJYSNXemjscv9FD/bQ4PHLf5/YPH+Fv936UGF/13crEXuY/yNY5R86yTvA8/B8+b+XAz3TAhI/Zl6NilN1V4sKUKgT2y3xa5Q1JRyfKSXkj8b5B8BcgaOBRthlx9WaG5hI9SH4geYe/88vf3jE9q10laNxt97xH+QwKh+kSNWaRSULMtMcilrJCxty8sbPXmKvR7J2IOspblXA5PkBHzo7B/X+eFH3NzNC3T9LfcQEM+K/+KL4JJWL5SptqpKyhvIZnAbJtTRPolhnor8tZCsZsgC0P7W1Gla+dNrNPGmLjkSkF4vsuSzZn51OnjnfA5CAw+XpNEf1y4bL50M3kP7gI/97M5F1w/2IjPKfbuwiIyjXyknOUeSMMWjxdxh9PhaGnI33Fva2jtgs4IA0gbVi4rRkZ5wLc0TavqYu1tylLRLGCZaiSJLGAh75+Z/afqXp/j/V9Z2+Lmlh2VX4wsJwOGlXri28mSbZj5+Gvqdsk92wjXgGvbEfiqRGudG30ikirY0jjWyQebpjqskBov07y7S1ctqBtmOn/760Z4Uw4bd//iy77PnF4qUvLMa7oV2/qmemTKFwbfHUcbRjpMF9wMjqx9ZAEiVfhwk9vN/aH6TDRglo0glGb1Z5Uzc1O0XRfa9ogLO5l8/vBR4ZMV9sGfwv4Dkbx9ze+gE6YdBlcMjpkZCYxZd+HlcC4mssx0jCx9+K8yQLzAyFKPX40foD38pUWWb0dxCkdspwyDKFar877ufrnMyV8LaLwlWKRJ73mhUczD6cftdPGXbdhGDdEC1ro0di/wMePZQZWnPeISwsNHCt9RhaoTxWq32AvZn8aNLTZElIUfitsCIqc5bPOzMd9OA6wCyghj3IICUSVvWcuiD32hHCYM0wGtvNmxSEc6LDwGmF0TG9NbaNHpL4BcgS2C0Q6YCoxqIuPGuv8pxF2OhDS/NNrNKReVyTNS9N9wUqoY0ECBZQchSnUuez1rY4CrsJZXSJ+sAiqZYLNBWIEUzdecx94mcgPO/+WjN0ROHYwo/ys3PogCxayth0I9+D8f1vu2ZTSQO/QA3AEcjIUEzrZAktJVGHm1xRHNKA6D678dK0fG8jCXts79WHNF65H5kthUkhE4RN5AqbVkYgEz0nf7bt80TWf1XTjFRtyVhKzbjZg5nyToXaUEC7NUH772IFOBxQ9WCqA0kCINDo8tx+5OngeJAEIWcWeMgATXe9fQjEqcH3+9IwpT09JHHFPt+kPp3Dqkq0+8Ou+ad5OiX/vszm8RBGtF24icvOebkSZA++2l+N0WkpId42zdPeGZ5MZig31CTLLw+9kv17CVJmFIRbZSp54e+RgxEpe+Mhk/O7SMQX05/uOb/ArW1HNW/aVTHEstMDkrHddF+N+t3mGrSAPXpJrIAqGwgR5cVVXHlHHHCRG2nvRijvq7mtDW0KrzpNHz9NtT566tK+AoSUz3xopHrooA9eKV950W6JQrQDu2jAglFN5+PhDviifq6Wsmzx09MOdEw8w21LHiWZk7czNq8cHwojCscVTkyyVw9jLqXt44PlDPVeAaA0RGjLgy7nzRjMgXtZd/SvUBysrGtHAC8CSuoQeTnctWIrYpacy+MvhzFXvMNlXh6+UHFdwTCiNhYKiDb4PD71RvLC9BfYxu/vmVbTMb4uhiw3TWtkHqKZSZ5zZxK2IxWeRh7hQ7mgoU2QS8T4KOj/I+a3tErD2tfq9UshxfwvexkkVpUZyNMFPXP227HA+ql5/8XhPGFXDaUPAkT0CsQa6s7fAXFYUZtzWnV26y6RFAjTEjZbYWxAb4i7LACflc9r3rgmnS5SRiJG+2TmFg+Bx0/jKh9WSBiatGz4xpxR8LEjfoy3+qjMv81DhP4yl1todY9lpl0XELjOgkiFpPPK2f7d3+NQ2LP4JjrC09LjrW+An6zRtNiffQL4Neo/qf77ZlzlSGJnQdclwB6EiZUM6kF5qwyTLWsunyuewA3yZmseenRuyHoAlOUK36mXziep9jowVgQHxTukgW7pVdiKgg0kSvs2ZR+YXOYr27tFptW/6biQtayrGH1Q9hdBfTS9N0rFYpd6ju4MSd2FlgtUL3ktHQx1B4WofetcCftgO1ZIeG9d0XoDT+ibvQx4bhal+Og7F8BqfrKa1uZeTEihspUNrOVzJhIOjpPxyGXZp0703niQNTTEtXzvdxvdMZtlpl0XEDqh2Y3K/Lf2QnEmSNnmpkYDgQeD677EQX3aIJlJhdDPn0PLdk/zFtFJawNMgdqrd0SS26FVcgTe/6yz82RVFBFKzdcGxSpoRsB7i6T0Z/niwdQtMYJDDBQYGcTVi4T2yoQ24wFrDRaFkRFlirbm7dhS7+4IM559ydPYAWKpc9QsO0oZQtZkXHw9NzDom27bAripkVo1cm9ee6JxF9TO9G5oSP7uAoblxRLdNpBntyStO37uXZ8p2CxrlweYxEJXBaVk3zj207uGrxvWyvvvcCLLZYBt+AXhOAoht1RrqUgou8Ago/EaN9DudQAAAAASUVORK5CYII="></image>
+        </g>
+    </g>
+</svg>

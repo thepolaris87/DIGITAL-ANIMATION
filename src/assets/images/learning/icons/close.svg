@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61" height="63" viewBox="0 0 61 63">
+  <g id="icon_close" transform="translate(-611 -145)">
+    <g id="icon_close-2" data-name="icon_close" transform="translate(-338.717 136.642)">
+      <rect id="사각형_688" data-name="사각형 688" width="35" height="5" rx="2.5" transform="translate(969.251 25.358) rotate(45)" fill="#fff"/>
+      <rect id="사각형_689" data-name="사각형 689" width="35" height="5" rx="2.5" transform="translate(994 28.893) rotate(135)" fill="#fff"/>
+    </g>
+    <rect id="사각형_897" data-name="사각형 897" width="61" height="63" transform="translate(611 145)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

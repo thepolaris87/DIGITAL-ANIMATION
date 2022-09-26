@@ -1,0 +1,31 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 241 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>
+    <defs>
+        <pattern id="patternMotion11" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#006300"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#007500"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#006300"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#007500"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#008c00"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+        <path stroke="#023f02" fill="#007500" style="fill:url(#patternMotion11)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 174.3839569091797 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -174.3839569091797  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+        <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#008c00" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 174.3839569091797  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+        <path fill="#023f02" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+        <g transform="translate(65,16.5)">
+            <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">얼음 다듬기</text>
+        </g>
+        <g transform="translate(192.3839569091797,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+        </g>
+    </g>
+</svg>

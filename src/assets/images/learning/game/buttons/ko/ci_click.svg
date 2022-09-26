@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 92 92">
+  <g id="얼음깨기_click" transform="translate(-3856 -458)">
+    <g id="사각형_836" data-name="사각형 836" transform="translate(3862 464)" fill="#599ff8" stroke="#80cffa" stroke-width="4">
+      <rect width="80" height="80" rx="12" stroke="none"/>
+      <rect x="-2" y="-2" width="84" height="84" rx="14" fill="none"/>
+    </g>
+    <text id="얼음깨기" transform="translate(3873 525.086)" fill="#244eb5" stroke="#244eb5" stroke-width="4" font-size="16" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">얼음깨기</tspan></text>
+    <text id="얼음깨기-2" data-name="얼음깨기" transform="translate(3873 525.086)" fill="#fff" font-size="16" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">얼음깨기</tspan></text>
+    <g id="사각형_837" data-name="사각형 837" transform="translate(3859 461)" fill="none" stroke="#244eb5" stroke-width="3">
+      <rect width="86" height="86" rx="14" stroke="none"/>
+      <rect x="-1.5" y="-1.5" width="89" height="89" rx="15.5" fill="none"/>
+    </g>
+    <path id="패스_1784" data-name="패스 1784" d="M17.219,9.111a.879.879,0,0,1,.843-.631h7.027a.878.878,0,0,1,.878.879.9.9,0,0,1-.046.277l-3.127,9.383h6.686a.88.88,0,0,1,.694,1.419l-12.3,15.808a.878.878,0,0,1-1.533-.8l3.164-10.281H13.671a.88.88,0,0,1-.844-1.126Z" transform="translate(3883 470.413)" fill="#244eb5" stroke="#244eb5" stroke-width="4"/>
+    <path id="패스_1785" data-name="패스 1785" d="M17.219,9.111a.879.879,0,0,1,.843-.631h7.027a.878.878,0,0,1,.878.879.9.9,0,0,1-.046.277l-3.127,9.383h6.686a.88.88,0,0,1,.694,1.419l-12.3,15.808a.878.878,0,0,1-1.533-.8l3.164-10.281H13.671a.88.88,0,0,1-.844-1.126Z" transform="translate(3883 470.413)" fill="#fff"/>
+    <g id="사각형_838" data-name="사각형 838" transform="translate(3859 461)" fill="#244eb5" stroke="#244eb5" stroke-width="3" opacity="0.498" style="mix-blend-mode: multiply;isolation: isolate">
+      <rect width="86" height="86" rx="14" stroke="none"/>
+      <rect x="-1.5" y="-1.5" width="89" height="89" rx="15.5" fill="none"/>
+    </g>
+  </g>
+</svg>

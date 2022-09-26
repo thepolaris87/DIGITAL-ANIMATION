@@ -1,0 +1,32 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 241 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternMotion3" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#308d00"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#50a700"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#308d00"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#50a700"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#6bbd00"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+            <path stroke="#276b00" fill="#50a700" style="fill:url(#patternMotion3)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 174.3839569091797 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -174.3839569091797  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+            <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#6bbd00" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 174.3839569091797  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+            <path fill="#276b00" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+            <path fill="#276b00"></path>
+        <g transform="translate(65,16.5)">
+            <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">제자리 돌기</text>
+        </g>
+        <g transform="translate(192.3839569091797,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+        </g>
+    </g>
+</svg>

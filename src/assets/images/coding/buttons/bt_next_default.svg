@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="65.401" viewBox="0 0 192 65.401">
+  <g id="bt_next_default" transform="translate(-235.5 -586.65)">
+    <g id="그룹_842" data-name="그룹 842" transform="translate(61.5 -11.95)">
+      <g id="사각형_890" data-name="사각형 890" transform="translate(174 599)" fill="#859100" stroke="#859100" stroke-width="1">
+        <rect width="192" height="65" rx="30" stroke="none"/>
+        <rect x="0.5" y="0.5" width="191" height="64" rx="29.5" fill="none"/>
+      </g>
+      <g id="그룹_658" data-name="그룹 658" transform="translate(-468 -5093.05)">
+        <path id="패스_1264" data-name="패스 1264" d="M237.125,419.83a25.008,25.008,0,1,1,0-50.016H368.153a25.008,25.008,0,0,1,0,50.016Z" transform="translate(435.225 5327.178)" fill="#b7c334"/>
+        <path id="패스_1265" data-name="패스 1265" d="M367.707,371.423a22.953,22.953,0,0,1,0,45.907H236.681a22.953,22.953,0,1,1,0-45.907Zm0-4.109H236.681a27.063,27.063,0,1,0,0,54.125H367.707a27.063,27.063,0,0,0,0-54.125" transform="translate(435.67 5327.624)" fill="#e0eb6a"/>
+        <path id="패스_1266" data-name="패스 1266" d="M366.995,366.6a27.063,27.063,0,0,1,0,54.125H235.968a27.063,27.063,0,1,1,0-54.125Zm0-3.287H235.968a30.35,30.35,0,1,0,0,60.7H366.995a30.35,30.35,0,1,0,0-60.7" transform="translate(436.383 5328.336)" fill="#859100"/>
+        <text id="다음으로" transform="translate(700.363 5729)" fill="#859100" stroke="#859100" stroke-width="4" font-size="21" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">다음으로</tspan></text>
+        <text id="다음으로-2" data-name="다음으로" transform="translate(700.363 5729)" fill="#fff" font-size="21" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">다음으로</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

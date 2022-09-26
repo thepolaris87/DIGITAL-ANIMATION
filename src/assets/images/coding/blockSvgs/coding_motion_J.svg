@@ -1,0 +1,32 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 216 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternMotion4" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#eb2185"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#f7349b"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#eb2185"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#f7349b"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#ff47ae"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+            <path stroke="#b7004b" fill="#f7349b" style="fill:url(#patternMotion4)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 149.64117431640625 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -149.64117431640625  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+            <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#ff47ae" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 149.64117431640625  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+            <path fill="#b7004b" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+            <path fill="#b7004b"></path>
+        <g transform="translate(65,16.5)">
+        <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">점프하기</text>
+        </g>
+        <g transform="translate(167.64117431640625,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+        </g>
+    </g>
+</svg>

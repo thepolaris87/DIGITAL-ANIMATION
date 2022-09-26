@@ -1,0 +1,32 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 361 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternMotion5" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#8010ff"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#9f28ff"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#8010ff"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#9f28ff"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#b136ff"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+        <path stroke="#4a02d3" fill="#9f28ff" style="fill:url(#patternMotion5)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 294.8983917236328 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -294.8983917236328  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+        <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#b136ff" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 294.8983917236328  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+        <path fill="#4a02d3" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+        <path fill="#4a02d3"></path>
+        <g transform="translate(65,16.5)">
+            <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">앞으로 3 칸 슬라이딩하기</text>
+        </g>
+        <g transform="translate(312.8983917236328,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 215 73" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternStart" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#b00a0b"></rect><rect x="32.5" y="0" width="967.5" height="1000" fill="#e11415"></rect>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l21,6.5 a15,-13,0,0,1,18.8,-15 z" class="start" fill="#ff2121"></path>
+        </pattern>
+    </defs>
+
+    <path stroke="#8e030b" fill="#e11415" style="fill:url(#patternStart)" stroke-width="2.5" d=" m 2.5,2.5  m 0,16 a 16 16 0 0,1 16,-16  h 178.64117431640625 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -149.64117431640625  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+    <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#ff2121" d=" m 18.5,5.3  h 178.64117431640625  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+    <path fill="#8e030b" d=" m 21,60 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+    <g transform="translate(67.5,19)">
+        <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">시작하기</text>
+    </g>
+    <g transform="translate(166.3,15.5)">
+        <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+    </g>
+</svg>

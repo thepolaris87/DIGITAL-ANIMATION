@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+body > textarea {
+    position: fixed !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    user-select: none;
+}
+
+.cp {
+    cursor: pointer;
+}
+.show-box {
+    border: 3px solid red;
+    box-sizing: border-box !important;
+}
+
+.ft-nanum {
+    font-weight: 400 !important;
+    font-family: NanumSquare !important;
+}
+.ft-nanum-b {
+    font-weight: 700 !important;
+    font-family: NanumSquare !important;
+}
+.ft-nanum-eb {
+    font-weight: 800 !important;
+    font-family: NanumSquare !important;
+}
+.ft-nanum-l {
+    font-weight: 300 !important;
+    font-family: NanumSquare !important;
+}
+.ft-OMP {
+    font-weight: 400 !important;
+    font-family: ONEMobilePOP !important;
+}
+
+/* material-theme으로 빼기 */
+.jei-intro-title {
+    color: #757575 !important;
+    font-weight: bold !important;
+}
+
+.jei-intro-subtitle {
+    color: #757575 !important;
+    font-weight: normal !important;
+}

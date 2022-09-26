@@ -1,0 +1,32 @@
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="5px" y="5px"
+    width="200px" height="100px" viewBox="0 0 303 72" xml:space="preserve">
+    <style type="text/css">
+        @font-face {
+            font-family: 'NanumSquareB';
+            font-weight: 700;
+            src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css') format('truetype');
+        }
+    </style>                    
+    <defs>
+        <pattern id="patternMotion2" patternUnits="userSpaceOnUse" width="1000" height="1000">
+            <rect x="0" y="0" width="32.5" height="1000" fill="#0642ff"></rect>
+            <rect x="32.5" y="0" width="967.5" height="1000" fill="#0a5bff"></rect>
+            <path d="M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#0642ff"></path>
+            <path d="M18.5,14 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" fill="#0a5bff"></path>
+            <path d="M54,0 h-54 v20 c1.08,-4.94,6.2,-8.15,11.29,-6.61 l0.16,0.05 c2.02,2.47,7.22,6.16,20.15,6.26 v0 c0,-0.06,0.01,-0.13,0.01,-0.19l0.48,0.15l0,0.05 c0.02,0,0.04,0,0.06,0 c15.02,-0.07,24.41,-5.02,20.92,-12.36 z M18.5,10 c0,-7,28,-7,28,0c0,7,-28,7,-28,0" class="motion2" fill="#0d6aff"></path>
+        </pattern>
+    </defs>
+
+    <g transform="translate(2.5,2.5)">
+            <path stroke="#0037a5" fill="#0a5bff" style="fill:url(#patternMotion2)" stroke-width="2.5" d=" m 0,0  m 0,16 a 16 16 0 0,1 16,-16  h 14  l 0,0  15,0  0,0  h 236.66751098632812 a 16 16 0 0,1 16,16  v 8  V 28  V 33  V 43 a 16 16 0 0,1 -16,16  h -236.66751098632812  l 0,0  -15,0  0,0  h -14 a 16 16 0 0,1 -16,-16 z"></path>
+            <path fill="none" stroke-width="3" stroke-linecap="round" stroke="#0d6aff" d=" m 16,2.8  h 14  l 0,0  15,0  0,0  h 236.66751098632812  h -3 a 13.7,13.7,0,0,1,16,16"></path>
+            <path fill="#0037a5" d=" m 18.5,58.5 l28,0 0,8 c0,7,-28,7,-28,0 z"></path>
+            <path fill="#0037a5"></path>
+        <g transform="translate(65,16.5)">
+            <text font-family="NanumSquareB" font-size="16pt" fill="#fff" style="text-shadow: -2px 0px #00000033, 0px 2px #00000033, 2px 0px #00000033, 0px -2px #00000033;" dominant-baseline="central" x="0" y="12">뒤로 1 칸 헤엄치기</text>
+        </g>
+        <g transform="translate(254.66751098632812,13)">
+            <image height="30px" width="30px" alt="*" xlink:href="data:image/png;base64,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"></image>
+        </g>
+    </g>
+</svg>

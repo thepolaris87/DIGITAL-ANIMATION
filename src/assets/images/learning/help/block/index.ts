@@ -1,0 +1,1 @@
+export { default as block1 } from './block1.png';

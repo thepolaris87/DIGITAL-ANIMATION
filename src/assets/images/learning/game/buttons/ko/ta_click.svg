@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92" height="92" viewBox="0 0 92 92">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="패스_1756" data-name="패스 1756" d="M0,0H45.83V37.866H0Z" transform="translate(-5.688 -4.221)" fill="none" stroke="#3d6a1b" stroke-linecap="round" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_802" data-name="사각형 802" width="40.455" height="33.425" transform="translate(-3 -2)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="제자리돌기_click" transform="translate(-3841 123)">
+    <g id="다이빙하기" transform="translate(3778 -302)">
+      <g id="사각형_719" data-name="사각형 719" transform="translate(69 185)" fill="#69a430" stroke="#81ba38" stroke-width="4">
+        <rect width="80" height="80" rx="12" stroke="none"/>
+        <rect x="-2" y="-2" width="84" height="84" rx="14" fill="none"/>
+      </g>
+      <text id="제자리돌기" transform="translate(73 246.086)" fill="#3d6a1b" stroke="#3d6a1b" stroke-width="4" font-size="16" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">제자리돌기</tspan></text>
+      <text id="제자리돌기-2" data-name="제자리돌기" transform="translate(73 246.086)" fill="#fff" font-size="16" font-family="NanumSquareRoundOTFEB, NanumSquareRoundOTF" letter-spacing="-0.015em"><tspan x="0" y="0">제자리돌기</tspan></text>
+      <g id="사각형_724" data-name="사각형 724" transform="translate(66 182)" fill="none" stroke="#3d6a1b" stroke-width="3">
+        <rect width="86" height="86" rx="14" stroke="none"/>
+        <rect x="-1.5" y="-1.5" width="89" height="89" rx="15.5" fill="none"/>
+      </g>
+    </g>
+    <g id="그룹_725" data-name="그룹 725" transform="translate(3873 -104.39)">
+      <g id="마스크_그룹_20" data-name="마스크 그룹 20" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="패스_1755" data-name="패스 1755" d="M33.475,11.013a2.576,2.576,0,0,0-3.61.429l-.658.834A14.706,14.706,0,1,0,14.714,29.425a2.57,2.57,0,1,0,0-5.14A9.572,9.572,0,1,1,24.108,12.9l-.855-.674a2.571,2.571,0,0,0-3.181,4.039L25.79,20.77a2.572,2.572,0,0,0,3.61-.429L32.271,16.7,33.9,14.623a2.571,2.571,0,0,0-.429-3.61" transform="translate(0 0)" fill="#3d6a1b" stroke="#3d6a1b" stroke-linecap="round" stroke-width="4"/>
+      </g>
+    </g>
+    <g id="그룹_726" data-name="그룹 726" transform="translate(3873 -104.39)">
+      <g id="그룹_722" data-name="그룹 722" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+        <path id="패스_1755-2" data-name="패스 1755" d="M33.475,11.013a2.576,2.576,0,0,0-3.61.429l-.658.834A14.706,14.706,0,1,0,14.714,29.425a2.57,2.57,0,1,0,0-5.14A9.572,9.572,0,1,1,24.108,12.9l-.855-.674a2.571,2.571,0,0,0-3.181,4.039L25.79,20.77a2.572,2.572,0,0,0,3.61-.429l4.5-5.717a2.571,2.571,0,0,0-.429-3.61" transform="translate(0 0)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="사각형_801" data-name="사각형 801" transform="translate(3844 -120)" fill="#3d6a1b" stroke="#3d6a1b" stroke-width="3" opacity="0.501" style="mix-blend-mode: multiply;isolation: isolate">
+      <rect width="86" height="86" rx="14" stroke="none"/>
+      <rect x="-1.5" y="-1.5" width="89" height="89" rx="15.5" fill="none"/>
+    </g>
+  </g>
+</svg>

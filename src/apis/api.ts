@@ -1,5 +1,5 @@
 import axios from 'axios';
-console.log(process.env.REACT_APP_SOL)
+
 // framedata 조회
 export const getFrameData = async ({ frameId }: { frameId: string | undefined }): Promise<any> => {
     const result = await axios.get(`${process.env.REACT_APP_SOL}/editor/frame/D1/${frameId}`, getConfigure());

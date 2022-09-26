@@ -1,1 +1,0 @@
-export { default as zone1 } from './zone1.png';

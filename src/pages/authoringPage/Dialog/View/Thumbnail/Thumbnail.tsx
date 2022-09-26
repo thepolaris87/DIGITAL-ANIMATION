@@ -21,8 +21,8 @@ export default function Thumbnail() {
 
     // DRAW
     useEffect(() => {
-        Array.from(container.current?.children || []).forEach((el, i) => i !== 0 && el.remove());
         setTimeout(() => {
+            Array.from(container.current?.children || []).forEach((el, i) => i !== 0 && el.remove());
             data.forEach((el, i) => {
                 const { dialogId } = el;
                 if (render[dialogId]) {
@@ -40,7 +40,8 @@ export default function Thumbnail() {
                 }
             });
         }, 300);
-    }, [data]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [data, render]);
 
     // UPDATE
     useEffect(() => {

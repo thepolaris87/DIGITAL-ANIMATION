@@ -43,7 +43,8 @@ export default function Canvas({ id, locale = 'ko', sceneType, background, image
                     characters.map((el) =>
                         drawImage({
                             canvas,
-                            src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                            // src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                            src: `/assets/images/${el.src}.${el.extension}`,
                             attr: { ...el.position, ...el.transform, ...el.attr },
                             id: el.id,
                             type: el.imageDivisionCode
@@ -68,7 +69,8 @@ export default function Canvas({ id, locale = 'ko', sceneType, background, image
                     images.map((el) =>
                         drawImage({
                             canvas,
-                            src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                            // src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                            src: `/assets/images/${el.src}.${el.extension}`,
                             attr: { ...el.position, ...el.transform, ...el.attr },
                             id: el.id,
                             type: el.imageDivisionCode

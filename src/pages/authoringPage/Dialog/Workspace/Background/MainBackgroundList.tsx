@@ -66,7 +66,8 @@ export default function MainBackgroundList() {
                     <img
                         width='100%'
                         height='100%'
-                        src={`${process.env.REACT_APP_SOL}/images/D1/${currentTarget.data.background.src}.${currentTarget.data.background.extension}`}
+                        // src={`${process.env.REACT_APP_SOL}/images/D1/${currentTarget.data.background.src}.${currentTarget.data.background.extension}`}
+                        src= {`/assets/images/${currentTarget.data.background.src}.${currentTarget.data.background.extension}`}
                         alt='background'
                     />
                 )}

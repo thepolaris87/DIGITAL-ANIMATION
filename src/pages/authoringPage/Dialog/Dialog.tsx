@@ -11,6 +11,7 @@ import { getImage, getSound, getText } from '../../../apis/api';
 const scale = 0.6;
 export const canvasWidth = 1024;
 export const canvasHeight = 768;
+export const [max, step] = [15, 0.1];
 
 export default function Dialog() {
     const { data } = useSelector(selectIntro);

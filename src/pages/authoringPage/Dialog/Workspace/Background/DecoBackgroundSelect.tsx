@@ -63,7 +63,8 @@ export default function DecoBackgroundSelect({ open, onClose }: { open: boolean;
                 imagesData.map((el) =>
                     drawImage({
                         canvas,
-                        src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                        // src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                        src: `/assets/images/${el.src}.${el.extension}`,
                         id: el.id,
                         attr: { ...el.position, ...el.transform, ...el.attr },
                         type: el.imageDivisionCode

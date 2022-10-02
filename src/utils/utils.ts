@@ -1,11 +1,3 @@
-import '../blockly/configs/render';
-import '../blockly/configs/newRenderer';
-import '../blockly/configs/newRenderer1';
-import '../blockly/configs/finalRenderer';
-import '../blockly/configs/themes';
-import Blockly from 'blockly';
-import { goal } from '../assets/images/editor';
-
 export const wait = (delay: number = 0) => new Promise((resolve) => setTimeout(resolve, delay));
 
 export const getPointInMatrixForm = ({ startPoint = { x: 0, y: 0 }, rows = 1, columns = 1, gap = { x: 0, y: 0 }, center = true }) => {
@@ -138,41 +130,6 @@ export const makeConfig0 = ({ category, blocks }: { category?: boolean; blocks: 
 
 // export const makeConfig = ({ category, blocks }: { category?: boolean; blocks: { category: string; id: string }[] }) => {
 
-export const makeConfig = ({
-    category,
-    blocks,
-    answer,
-    blockCountHint,
-    ...rest
-}: {
-    category?: boolean;
-    blocks: { category: string; id: string }[];
-    answer?: { best: [{ countType?: Object }] };
-    blockCountHint?: boolean;
-    [key: string]: any;
-}) => {
-    const toolbox = makeConfig0({ category, blocks });
-    const maxInstances = answer !== undefined && blockCountHint ? answer.best[0]?.countType : {};
-    return {
-        toolbox,
-        theme: Blockly.Themes.newTheme,
-        // renderer: 'zelos',
-        // maxInstances: { coding_motion_S: 2 },
-        maxInstances,
-        media: '../media/',
-        // renderer: 'newRenderer',
-        renderer: 'finalRenderer',
-        // renderer: 'newRenderer1',
-        // move: { scrollbars: { horizontal: true, vertical: true }, drag: true, wheel: true },
-        move: { scrollbars: { horizontal: false, vertical: false }, drag: false, wheel: false },
-        // grid: { spacing: 20, length: 3, colour: '#fff', snap: true },
-        grid: { spacing: 30, length: 5, colour: '#D4BB8E66', snap: true },
-        trashcan: true,
-        // zoom: { controls: true, wheel: true, startScale: 1.0, maxScale: 3, minScale: 0.8, scaleSpeed: 1.2, pinch: true }
-        zoom: { controls: false, wheel: false, startScale: 0.7, maxScale: 3, minScale: 0.7, scaleSpeed: 1.2, pinch: false },
-        ...rest
-    };
-};
 
 export const sound = (src: string) => {
     const audio = new Audio();
@@ -202,8 +159,7 @@ export const parseText = (text: string) => {
         { search: /\$c001\{(.*?)\}/g, replace: '<span style="color:red;">$1</span>' },
         { search: /\$cb001\{(.*?)\}/g, replace: '<span style="color:red;font-weight:800;">$1</span>' },
         { search: /\$c002\{(.*?)\}/g, replace: '<span style="color:blue;">$1</span>' },
-        { search: /\$cb002\{(.*?)\}/g, replace: '<span style="color:blue;font-weight:800;">$1</span>' },
-        { search: /\$img001/g, replace: `<img src="${goal}" />` }
+        { search: /\$cb002\{(.*?)\}/g, replace: '<span style="color:blue;font-weight:800;">$1</span>' },        
     ];
     const result = replace.reduce((p, c) => p.replace(c.search, c.replace), text);
     return result;

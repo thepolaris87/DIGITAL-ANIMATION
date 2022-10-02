@@ -2,8 +2,8 @@ import React from 'react';
 import { Divider, Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { selectIntro } from '../../../../../slices/intro';
-import Animating from './Animating';
-import Formatting from './Formatting';
+import Animate from './Animate';
+import Format from './Format';
 import TextColor from './TextColor';
 import Bold from './Bold';
 import Italic from './Italic';
@@ -19,11 +19,11 @@ export default function OptionToolbox() {
         <Grid sx={{ p: '0 8px', height: '52.5px' }} container alignItems='center'>
             <Typography sx={{ color: '#757575', fontWeight: 'bold' }}>OPTIONAL</Typography>
             <Divider sx={{ m: 0.5 }} orientation='vertical' flexItem />
-            {currentTarget.type && <Formatting />}
+            {currentTarget.type && <Format />}
             {['image', 'character'].includes(currentTarget.type) && (
                 <React.Fragment>
                     <Divider sx={{ m: 0.5 }} orientation='vertical' flexItem />
-                    <Animating />
+                    <Animate />
                 </React.Fragment>
             )}
             {['text'].includes(currentTarget.type) && (

@@ -16,7 +16,7 @@ export default function SelectImage() {
     const onImageChange = (e: SelectChangeEvent<string>, type: 'bubble' | 'nameTag', id?: string) => {
         if (imageList && id) {
             const script = render[currentDialog].getObjects().find((el) => el.data.id === id && el.data.type === 'text');
-            const attr = { top: script?.top, left: script?.left, scaleX: script?.scaleX, scaleY: script?.scaleY, angle: script?.angle };
+            const attr = { position: { top: script?.top, left: script?.left }, transfrom: { scaleX: script?.scaleX, scaleY: script?.scaleY, angle: script?.angle } };
             dispatch(
                 setScripts({
                     id,
@@ -50,7 +50,8 @@ export default function SelectImage() {
                                         width: Number(el.width) > 50 || Number(el.height) > 50 ? '50px' : 'auto',
                                         height: Number(el.width) > 50 || Number(el.height) > 50 ? '50px' : 'auto'
                                     }}
-                                    src={`${process.env.REACT_APP_SOL}/images/D1/${el.imageId}.${el.extension}`}
+                                    // src={`${process.env.REACT_APP_SOL}/images/D1/${el.imageId}.${el.extension}`}
+                                    src={`/assets/images/${el.imageId}.${el.extension}`}
                                     alt={el.imageId}></img>
                             </Grid>
                         </MenuItem>

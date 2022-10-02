@@ -40,7 +40,8 @@ export default function useKeyboardEvent() {
             const id = uuidv4();
             drawImage({
                 canvas: render[currentDialog],
-                src: `${process.env.REACT_APP_SOL}/images/D1/${clip.data.src}.${clip.data.extension}`,
+                // src: `${process.env.REACT_APP_SOL}/images/D1/${clip.data.src}.${clip.data.extension}`,
+                src:`/assets/images/${clip.data.src}.${clip.data.extension}`,
                 attr: { ...clip.data.position, ...clip.data.transform, ...clip.data.attr },
                 id,
                 type: clip.data.imageDivisionCode

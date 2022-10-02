@@ -13,11 +13,13 @@ export const ImageItem = ({ image, focus, onClick }: { image: GETIMAGE; focus?: 
                         style={{ position: 'absolute', clip: 'rect(0, 125px, 125px, 0)' }}
                         width={`${125 * Number(image.reference)}px`}
                         height='125px'
-                        src={`${process.env.REACT_APP_SOL}/images/D1/${image.imageId}.${image.extension}`}
+                        // src={`${process.env.REACT_APP_SOL}/images/D1/${image.imageId}.${image.extension}`}
+                        src={`/assets/images/${image.imageId}.${image.extension}`}
                         alt='main'
                     />
                 ) : (
-                    <img width={size} height={size} src={`${process.env.REACT_APP_SOL}/images/D1/${image.imageId}.${image.extension}`} alt='main' />
+                    // <img width={size} height={size} src={`${process.env.REACT_APP_SOL}/images/D1/${image.imageId}.${image.extension}`} alt='main' />
+                    <img width={size} height={size} src={`/assets/images/${image.imageId}.${image.extension}`} alt='main' />
                 )}
             </Grid>
         </Paper>
@@ -34,11 +36,13 @@ export const ImageView = ({ image, focus }: { image: IMAGEBASICFORM; focus?: boo
                         style={{ position: 'absolute', clip: 'rect(0, 125px, 125px, 0)' }}
                         width={`${125 * Number(image.frame)}px`}
                         height='125px'
-                        src={`${process.env.REACT_APP_SOL}/images/D1/${image.src}.${image.extension}`}
+                        // src={`${process.env.REACT_APP_SOL}/images/D1/${image.src}.${image.extension}`}
+                        src={`/assets/images/${image.src}.${image.extension}`}
                         alt='main'
                     />
                 ) : (
-                    <img width={size} height={size} src={`${process.env.REACT_APP_SOL}/images/D1/${image.src}.${image.extension}`} alt='main' />
+                    // <img width={size} height={size} src={`${process.env.REACT_APP_SOL}/images/D1/${image.src}.${image.extension}`} alt='main' />
+                    <img width={size} height={size} src={`/assets/images/${image.src}.${image.extension}`} alt='main' />
                 )}
             </Grid>
             {image.imageDivisionCode === '02' && (

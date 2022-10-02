@@ -66,8 +66,13 @@ export default function MainBackgroundSelect({ open, onClose }: { open: boolean;
 
     const onSaveClick = async () => {
         const canvas = render[currentDialog];
-        if (selectImage && selectImage.background) {            
-            await drawBackground({ canvas, src: `${process.env.REACT_APP_SOL}/images/D1/${selectImage.background.src}.${selectImage.background.extension}` });
+        if (selectImage && selectImage.background) {
+            await drawBackground({
+                canvas,
+                // src: `${process.env.REACT_APP_SOL}/images/D1/${selectImage.background.src}.${selectImage.background.extension}`
+                src: `/assets/images/${selectImage.background.src}.${selectImage.background.extension}`,
+
+            });
             dispatch(setBackground(selectImage.background));
         }
 
@@ -77,12 +82,13 @@ export default function MainBackgroundSelect({ open, onClose }: { open: boolean;
                 el.position = { top: 768 / 2, left: 1024 / 2 };
                 el.transform = { angle: 0, scaleX: 1, scaleY: 1, flipX: false, flipY: false };
                 return el;
-            });            
+            });
             await Promise.all(
                 imagesData.map((el) =>
                     drawImage({
                         canvas,
-                        src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                        // src: `${process.env.REACT_APP_SOL}/images/D1/${el.src}.${el.extension}`,
+                        src: `/assets/images/${el.src}.${el.extension}`,
                         id: el.id,
                         attr: { ...el.position, ...el.transform, ...el.attr },
                         type: el.imageDivisionCode

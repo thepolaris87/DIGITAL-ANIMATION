@@ -1,11 +1,10 @@
-import { EditingTextWrapper } from './OptionToolbox.styles';
+import { EditingTextWrapper, InputColor } from './OptionToolbox.styles';
 
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { selectIntro } from '../../../../../slices/intro';
 import { useState } from 'react';
-import { InputColor } from '../../ExtraTab/Formatting/FormattingTab.styles';
 
 export default function FillColor() {
     const { currentTarget } = useSelector(selectIntro);

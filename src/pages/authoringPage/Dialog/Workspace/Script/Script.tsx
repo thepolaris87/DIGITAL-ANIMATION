@@ -17,11 +17,11 @@ export default function Script() {
     return (
         <Box>
             <UsingScript />
-            {targetData?.scripts?.length !== 0 && (
+            {!!targetData?.scripts?.length && (
                 <React.Fragment>
                     <SelectLocale />
                     <SelectText />
-                    <SelectTTS />
+                    {/* <SelectTTS /> */}
                     <SelectBubble />
                 </React.Fragment>
             )}

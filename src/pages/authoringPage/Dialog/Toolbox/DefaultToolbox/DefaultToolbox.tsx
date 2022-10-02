@@ -4,6 +4,7 @@ import { addDialog, deleteDialog, selectIntro, init, setCurrentDialog } from '..
 import { v4 as uuidv4 } from 'uuid';
 import Save from './Save';
 import ViewType from './ViewType';
+import Timeline from './Timeline';
 
 export default function DefaultToolbox() {
     const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function DefaultToolbox() {
             <Button onClick={onDialogDeleteClick}>삭제</Button>
             <Button onClick={onDialogAllDeleteClick}>모두 삭제</Button>
             <ViewType />
+            <Timeline />
             <Save />
         </div>
     );

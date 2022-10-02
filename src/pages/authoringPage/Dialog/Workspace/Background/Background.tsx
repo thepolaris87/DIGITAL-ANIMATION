@@ -22,7 +22,7 @@ export default function Background() {
 
     return (
         <Box>
-            <SelectBGM data={soundData} />
+            {/* <SelectBGM data={soundData} /> */}
             <SelectSceneType />
             <Box sx={{ mt: 4 }}>
                 <MetaTitle>

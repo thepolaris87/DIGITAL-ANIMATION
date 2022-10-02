@@ -44,7 +44,7 @@ export default function UsingScript() {
                 <Typography className='jei-intro-title'>USE SCRIPT</Typography>
             </Grid>
             <Grid>
-                <Switch sx={{ ml: -1.5 }} checked={targetData?.scripts?.length !== 0} onChange={onUseScriptChange} />
+                <Switch sx={{ ml: -1.5 }} checked={!!targetData?.scripts?.length} onChange={onUseScriptChange} />
             </Grid>
         </Grid>
     );

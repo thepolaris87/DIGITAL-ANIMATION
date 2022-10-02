@@ -2,26 +2,34 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './index';
 
 export const effects = [
-    { value: 'dealy', display: 'DEALY' },
     { value: 'fadeIn', display: 'FADE IN' },
     { value: 'fadeOut', display: 'FADE OUT' },
     { value: 'blink', display: 'BLINK' },
-    { value: 'zoomIn', display: 'ZOOM IN' },
-    { value: 'zoomOut', display: 'ZOOM OUT' }
+    { value: 'move', display: 'MOVE' },
+    { value: 'hidden', display: 'HIDDEN' },
+    { value: 'visible', display: 'VISIBLE' },
+    { value: 'scale', display: 'SCALE' }
 ];
 export type POSITION = { top?: number; left?: number };
 export type TRANSFORM = { angle?: number; scaleX?: number; scaleY?: number; flipX?: boolean; flipY?: boolean };
 export type ATTR = { width?: number; height?: number; opacity?: number; rx?: number; ry?: number };
-export type EFFECT = 'dealy' | 'fadeIn' | 'fadeOut' | 'blink' | 'zoomIn' | 'zoomOut';
+export type EFFECT = 'fadeIn' | 'fadeOut' | 'blink' | 'move' | 'hidden' | 'visible' | 'scale';
+export type TEXTEFFECT = 'basic' | 'typing';
 export type TTSBASICFORM = { src: string; extension: string; soundDivisionCode: string };
 export type TEXTBASICFROM = { src: string; textDivisionCode: string };
+export type EFFECTBASICFORM = {
+    type: EFFECT;
+    timeline: number[];
+    option?: { interval?: number; top?: number; left?: number; scaleX?: number; scaleY?: number };
+};
 export type SCRIPTBASICFORM = {
     id: string;
     text?: TEXTBASICFROM;
     textbox?: {
-        ko: { top: number; left: number; width: number; angle: number };
-        en: { top: number; left: number; width: number; angle: number };
+        ko: { top?: number; left?: number; width?: number; angle?: number };
+        en: { top?: number; left?: number; width?: number; angle?: number };
     };
+    effect?: { type: TEXTEFFECT; appearance?: number[]; option?: { interval?: number } };
     textStyles?: { ko: any; en: any };
     tts?: { ko: TTSBASICFORM; en: TTSBASICFORM };
     bubble?: {
@@ -45,16 +53,12 @@ export type IMAGEBASICFORM = {
     height?: string;
     imageDivisionCode?: string;
     frame?: string;
-    effects?: {
-        type: EFFECT;
-        duration: number;
-        interval?: number;
-        opacity?: number;
-    }[];
+    effects?: EFFECTBASICFORM[];
     position?: POSITION;
     transform?: TRANSFORM;
     attr?: ATTR;
 };
+export type MASTER = { background?: IMAGEBASICFORM; images?: IMAGEBASICFORM[]; bgm?: { src: string; extension: string; soundDivisionCode: string } };
 
 export type DATA = {
     dialogId: string;
@@ -64,19 +68,18 @@ export type DATA = {
     characters?: IMAGEBASICFORM[];
     images?: IMAGEBASICFORM[];
     bgm?: { src: string; extension: string; soundDivisionCode: string };
-    master?: { background: IMAGEBASICFORM; images: IMAGEBASICFORM[] };
 };
-
 type STATE = {
     currentDialog: string;
     currentTarget: { type: string; [key: string]: any };
     data: DATA[];
     navi: 'background' | 'script';
     render: { [sceneId: string]: fabric.Canvas };
-    open: { formatting: boolean; animating: boolean };
+    open: { format: boolean; animate: boolean; textAnimate: boolean };
     locale: 'ko' | 'en';
     viewType: 'single' | 'multi';
     clip?: { type: string; data: IMAGEBASICFORM } | undefined;
+    naviMaster: boolean;
 };
 
 const name = 'intro';
@@ -87,9 +90,10 @@ const initialState: STATE = {
     data: [],
     navi: 'script',
     render: {},
-    open: { formatting: false, animating: false },
+    open: { format: false, animate: false, textAnimate: false },
     locale: 'ko',
-    viewType: 'single'
+    viewType: 'single',
+    naviMaster: false
 };
 
 const slice = createSlice({
@@ -101,15 +105,15 @@ const slice = createSlice({
             const { payload } = action;
             if (payload) state.data = payload;
             else state.data = [];
-        },
+        },        
         setNavi: (state, action: PayloadAction<'background' | 'script'>) => {
             const { payload } = action;
-            state.navi = payload;
+            state.navi = state.naviMaster ? state.navi : payload;
             return state;
         },
         addDialog: (state, action: PayloadAction<string>) => {
             const { payload } = action;
-            const data: DATA = { dialogId: payload, dialogType: 'communication', scripts: [] };
+            const data: DATA = { dialogId: payload, dialogType: 'communication' };
             state.data.push(data);
             return state;
         },
@@ -145,6 +149,13 @@ const slice = createSlice({
             });
             return state;
         },
+        deleteBackground: (state) => {
+            state.data = state.data.map((el) => {
+                if (el.dialogId === state.currentDialog) delete el.background;
+                return el;
+            });
+            return state;
+        },                        
         setImages: (state, action: PayloadAction<IMAGEBASICFORM[]>) => {
             const { payload } = action;
             state.data = state.data.map((el) => {
@@ -152,7 +163,8 @@ const slice = createSlice({
                 return el;
             });
             return state;
-        },
+        },        
+
         setCharacters: (state, action: PayloadAction<IMAGEBASICFORM[]>) => {
             const { payload } = action;
             state.data = state.data.map((el) => {
@@ -161,14 +173,18 @@ const slice = createSlice({
             });
             return state;
         },
-        setEffects: (state, action: PayloadAction<{ type: EFFECT; duration: number }[]>) => {
+        setEffects: (state, action: PayloadAction<EFFECTBASICFORM[]>) => {
             const { payload } = action;
             state.data = state.data.map((el) => {
                 if (el.dialogId === state.currentDialog) {
-                    const images = el.images?.find((el) => el.id === state.currentTarget.object.data.id);
-                    const characters = el.characters?.find((el) => el.id === state.currentTarget.object.data.id);
-                    if (images) images.effects = payload;
-                    if (characters) characters.effects = payload;
+                    if (state.currentTarget.type === 'image') {
+                        const images = el.images?.find((el) => el.id === state.currentTarget.object.data.id);
+                        if (images) images.effects = payload;
+                    }
+                    if (state.currentTarget.type === 'character') {
+                        const characters = el.characters?.find((el) => el.id === state.currentTarget.object.data.id);
+                        if (characters) characters.effects = payload;
+                    }
                 }
                 return el;
             });
@@ -178,6 +194,13 @@ const slice = createSlice({
             const { payload } = action;
             state.data.map((el) => {
                 if (el.dialogId === state.currentDialog) el.bgm = payload;
+                return el;
+            });
+            return state;
+        },
+        deleteBGM: (state) => {
+            state.data.map((el) => {
+                if (el.dialogId === state.currentDialog) delete el.bgm;
                 return el;
             });
             return state;
@@ -195,7 +218,7 @@ const slice = createSlice({
             });
             return state;
         },
-        setOpen: (state, action: PayloadAction<{ formatting: boolean; animating: boolean }>) => {
+        setOpen: (state, action: PayloadAction<STATE['open']>) => {
             const { payload } = action;
             state.open = payload;
             return state;
@@ -228,7 +251,8 @@ const slice = createSlice({
         setScripts: (state, action: PayloadAction<{ id: string; key: keyof SCRIPTBASICFORM; data: SCRIPTBASICFORM[keyof SCRIPTBASICFORM] }>) => {
             const { payload } = action;
             state.data = state.data.map((el) => {
-                if (el.dialogId === state.currentDialog) return { ...el, scripts: el.scripts?.map((el) => (el.id === payload.id ? { ...el, [payload.key]: payload.data } : el)) };
+                if (el.dialogId === state.currentDialog)
+                    return { ...el, scripts: el.scripts?.map((el) => (el.id === payload.id ? { ...el, [payload.key]: payload.data } : el)) };
                 return el;
             });
             return state;
@@ -237,7 +261,7 @@ const slice = createSlice({
             const { payload } = action;
             state.viewType = payload;
             return state;
-        }
+        },        
     }
 });
 
@@ -256,13 +280,14 @@ export const {
     setDialogType,
     setOpen,
     setBackground,
+    deleteBackground,    
     setEffects,
     setLocale,
     setClip,
     addScript,
     removeScripts,
     setScripts,
-    setViewType
+    setViewType,
 } = slice.actions;
 
 export const selectIntro = (state: RootState) => state.intro;

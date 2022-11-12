@@ -1,15 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-
-import Appbar from './components/appBar';
-import Dialog from './pages/authoringPage/Dialog';
+import DialogPage from './pages/DialogPage';
 
 export default function Router() {
     return (
-        <Appbar>
-            <Routes>
-                <Route path='/authoring/dialog' element={<Dialog />}></Route>
-                <Route path='/*' element={<Navigate replace to='/authoring/dialog'></Navigate>}></Route>
-            </Routes>
-        </Appbar>
+        <Routes>
+            <Route path='/:frameId' element={<DialogPage />}></Route>
+            <Route path='/*' element={<Navigate replace to='/AF000001'></Navigate>}></Route>
+        </Routes>
     );
 }

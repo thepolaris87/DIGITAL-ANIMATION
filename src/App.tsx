@@ -13,7 +13,7 @@ import Router from './Router';
 
 // STYLE
 import { ThemeProvider } from '@mui/material';
-import theme from './assets/styles/theme'; 
+import theme from './assets/styles/theme';
 
 import { default as pack } from '../package.json';
 

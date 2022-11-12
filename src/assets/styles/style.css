@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #f2f5f5;
 }
 
 body > textarea {
@@ -44,12 +45,12 @@ img {
 }
 
 /* material-theme으로 빼기 */
-.jei-intro-title {
+.jei-title {
     color: #757575 !important;
     font-weight: bold !important;
 }
 
-.jei-intro-subtitle {
+.jei-subtitle {
     color: #757575 !important;
     font-weight: normal !important;
 }

@@ -1,1 +1,4 @@
-export const _const = 'const';
+export const fonts = [
+    { name: 'ONEMobilePOP', display: 'ONEMobilePOP' },
+    { name: 'NanumSquare', display: 'NanumSquare' }
+];

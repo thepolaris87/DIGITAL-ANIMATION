@@ -21,22 +21,7 @@ export default function Canvas({ data, onComplete }: CANVAS) {
         if (canvas || !canvasRef.current) return;
 
         const _canvas = new fabric.Canvas(canvasRef.current, { defaultCursor: 'default', containerClass: 'dialog-canvas-container' });
-
-        let objects = [];
-        if (data?.canvas?.objects && Array.isArray(data?.canvas?.objects)) {
-            objects = data.canvas.objects.map((object: any) => {
-                if (object.data.type === 'script') {
-                    return {
-                        ...object,
-                        onKeyDown: (e: any) => e.preventDefault(),
-                        styles: object.data.koStyles
-                    };
-                }
-                return object;
-            });
-        }
-
-        _canvas.loadFromJSON({ ...data.canvas, objects }, () => {
+        _canvas.loadFromJSON({ ...data.canvas }, () => {
             _canvas.forEachObject((object) => {
                 if (object.data.master) {
                     object.set({ evented: false, selectable: false });

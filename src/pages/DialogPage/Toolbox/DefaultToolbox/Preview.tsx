@@ -1,40 +1,30 @@
-import { FormControlLabel, Grid, IconButton, Radio, RadioGroup, Tooltip } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material';
 import PreviewIcon from '@mui/icons-material/Preview';
 import MetaModal from '../../../../components/MetaModal';
-import { useState } from 'react';
-import { postMessage } from '../../../../utils/util';
-
+import { useRef, useState } from 'react';
 import LearningPage from '../../../LearningPage';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectDialog } from '../../../../slices/dialog';
+import useCanvasSync from '../../hooks/useCanvasSync';
+import { setData } from '../../../../slices/learning';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Preview() {
-    const { frameId } = useParams();
-    const { frameType } = useSelector(selectDialog);
+    const { frameType, data } = useSelector(selectDialog);
     const [open, setOpen] = useState(false);
-    const [locale, setLocale] = useState('ko');
+    const { getSyncData } = useCanvasSync();
+    const key = useRef(0);
+    const dispatch = useDispatch();
 
     const onClose = () => {
-        setOpen((prev) => {
-            postMessage({ code: prev ? 'close' : 'open' });
-            return !prev;
-        });
-    };
-
-    const onLocaleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLocale(e.target.value);
+        setOpen(!open);
     };
 
     const onPreviewClick = () => {
-        if (process.env.NODE_ENV === 'development') {
-            setOpen((prev) => {
-                postMessage({ code: prev ? 'close' : 'open' });
-                return !prev;
-            });
-        } else {
-            postMessage({ code: 'preview' });
-        }
+        key.current += 1;
+        setOpen(!open);
+        const syncData = getSyncData();
+        dispatch(setData({ ...data, dialog: syncData }));
     };
 
     return (
@@ -46,19 +36,33 @@ export default function Preview() {
                     </IconButton>
                 </span>
             </Tooltip>
-            <MetaModal title='Preview' open={open} onClose={onClose} save={false}>
-                <Grid sx={{ position: 'absolute', top: '17px', left: '130px', width: 'fit-content' }} container alignItems='center' wrap='nowrap'>
-                    <Grid item>
-                        <RadioGroup row value={locale} onChange={onLocaleChange}>
-                            <FormControlLabel value='ko' control={<Radio />} label='KO' />
-                            <FormControlLabel value='en' control={<Radio />} label='EN' />
-                        </RadioGroup>
+            {open && (
+                <Grid
+                    key={key.current}
+                    sx={{ height: '100vh', width: '100vw', position: 'fixed', zIndex: 1000, top: 0, left: 0, background: '#fff' }}
+                    container
+                    direction='column'
+                    wrap='nowrap'>
+                    <Grid sx={{ p: 1 }} item>
+                        <Grid container alignItems='center' justifyContent='space-between'>
+                            <Typography className='dia-title'>PREVIEW</Typography>
+                            <IconButton onClick={onClose}>
+                                <CloseIcon />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
+                    <Divider />
+                    <Grid sx={{ flex: 1, border: '1px solid #757575', m: 1 }} item>
+                        <LearningPage />
                     </Grid>
                 </Grid>
+            )}
+
+            {/* <MetaModal key={key.current} title='Preview' open={open} onClose={onClose} save={false}>
                 <Grid sx={{ height: '100%', width: '100%' }} container alignItems='center' justifyContent='center'>
-                    {frameId && locale && <LearningPage key={locale} frameId={frameId} locale={locale} />}
+                    <LearningPage />
                 </Grid>
-            </MetaModal>
+            </MetaModal> */}
         </>
     );
 }

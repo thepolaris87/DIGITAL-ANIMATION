@@ -14,7 +14,7 @@ export default function MasterFrame() {
         <List>
             <ListSubheader>
                 <Grid container justifyContent='space-between' alignItems='center'>
-                    <Typography className='jei-title'>MASTER FRAME</Typography>
+                    <Typography className='dia-title'>MASTER FRAME</Typography>
                     <IconButton onClick={onCloseIconClick}>
                         <Close />
                     </IconButton>

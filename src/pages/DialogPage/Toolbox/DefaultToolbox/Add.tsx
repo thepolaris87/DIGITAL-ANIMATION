@@ -11,7 +11,7 @@ export default function Add() {
 
     const onDialogAddClick = () => {
         const id = uuidv4();
-        dispatch(addDialog({ id, scene: { effect: { type: 'disappear', duration: 300 }, cutAway: 'auto' } }));
+        dispatch(addDialog({ id, scene: { effect: { type: 'disappear', duration: 3000 }, cutAway: 'auto' } }));
         frameType === 'M' && dispatch(setNavi('master'));
     };
     return (

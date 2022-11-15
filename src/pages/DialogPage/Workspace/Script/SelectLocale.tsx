@@ -43,7 +43,7 @@ export default function SelectLocale({ objects }: { objects: fabric.Object[] }) 
     return (
         <Grid sx={{ mt: 2 }} container alignItems='center'>
             <Grid sx={{ mr: 2, width: '110px' }} item>
-                <Typography className='jei-title'>LOCALE</Typography>
+                <Typography className='dia-title'>LOCALE</Typography>
             </Grid>
             <Grid item>
                 <FormControl>

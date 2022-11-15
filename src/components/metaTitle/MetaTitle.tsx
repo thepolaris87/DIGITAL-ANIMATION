@@ -1,4 +1,4 @@
-import { Typography, Grid, IconButton, Box } from '@mui/material';
+import { Typography, Grid, IconButton, Box, Button } from '@mui/material';
 // import { Header as SHeader } from './MetaTitle.styles';
 import AddIcon from '@mui/icons-material/Add';
 import { ReactNode } from 'react';
@@ -25,11 +25,7 @@ const Header = ({ children, backgroundColor, ...rest }: STYLE) => {
 export default function MetaTitle({ children, backgroundColor }: METATITLE) {
     return (
         <Header backgroundColor={backgroundColor}>
-            <Grid
-                sx={{ height: '32px', backgroundColor: backgroundColor === 'master' ? orange[400] : 'darkgrey' }}
-                container
-                justifyContent='space-between'
-                alignItems='center'>
+            <Grid sx={{ height: '32px', backgroundColor: backgroundColor === 'master' ? orange[400] : 'darkgrey' }} container justifyContent='space-between' alignItems='center'>
                 {children}
             </Grid>
         </Header>
@@ -49,6 +45,17 @@ MetaTitle.AddIcon = ({ onClick }: { onClick: React.MouseEventHandler<HTMLButtonE
         <Grid item alignItems={'center'}>
             <IconButton sx={{ color: 'white', padding: '0 8px' }} onClick={onClick}>
                 <AddIcon sx={{ width: '30px', height: '30px' }} />
+            </IconButton>
+        </Grid>
+    );
+};
+
+MetaTitle.UploadIcon = ({ onChange, accept, multiple }: { onChange: React.ChangeEventHandler<HTMLInputElement>; accept: string; multiple: boolean }) => {
+    return (
+        <Grid item alignItems={'center'}>
+            <IconButton sx={{ color: 'white', padding: '0 8px' }} component='label'>
+                <AddIcon sx={{ width: '30px', height: '30px' }} />
+                <input hidden accept={accept} type='file' multiple onChange={onChange} />
             </IconButton>
         </Grid>
     );

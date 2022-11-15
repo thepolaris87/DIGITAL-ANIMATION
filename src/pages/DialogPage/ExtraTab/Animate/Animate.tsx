@@ -18,7 +18,7 @@ export default function Animate() {
         <List>
             <ListSubheader>
                 <Grid container justifyContent='space-between' alignItems='center'>
-                    <Typography className='jei-title'>ANIMATE</Typography>
+                    <Typography className='dia-title'>ANIMATE</Typography>
                     <IconButton onClick={onCloseIconClick}>
                         <CloseIcon />
                     </IconButton>

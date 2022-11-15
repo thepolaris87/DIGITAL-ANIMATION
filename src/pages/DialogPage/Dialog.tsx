@@ -52,7 +52,7 @@ export default function Dialog() {
             </Grid>
             {data?.dialog?.length === 0 && (
                 <Grid sx={{ width: '100%', flex: 1 }} container alignItems='center' justifyContent='center'>
-                    <Typography className='jei-title' sx={{ pb: 20, fontSize: '65px' }}>
+                    <Typography className='dia-title' sx={{ pb: 20, fontSize: '65px' }}>
                         씬을 추가해주세요.
                     </Typography>
                 </Grid>

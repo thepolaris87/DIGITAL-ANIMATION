@@ -64,7 +64,7 @@ export default function DialogEffect() {
                 <Button sx={{ m: 1, borderRadius: '8px' }} size='small' color='warning' variant='contained' onClick={onPlayClick}>
                     {!!cancel ? 'STOP' : 'PLAY'}
                 </Button>
-                <Typography sx={{ ml: 1 }} className='jei-subtitle'>
+                <Typography sx={{ ml: 1 }} className='dia-subtitle'>
                     {time}s
                 </Typography>
             </Grid> */}

@@ -34,7 +34,7 @@ export default function SelectText({ object }: { object: fabric.Textbox }) {
         <Grid sx={{ mb: 1, mt: 1 }} container wrap='nowrap'>
             <Grid sx={{ width: '250px' }} container alignItems='center' wrap='nowrap'>
                 <Grid sx={{ width: '60px', mr: 2 }} item>
-                    <Typography className='jei-title'>TEXT</Typography>
+                    <Typography className='dia-title'>TEXT</Typography>
                 </Grid>
                 <Select value={object.data.src} size='small' onChange={(e) => onTextChange(e)}>
                     {textList.map((el) => (

@@ -1,5 +1,6 @@
 import './assets/styles/font.css';
 import './assets/styles/style.css';
+import './assets/styles/animation.css';
 
 import ReactDOM from 'react-dom/client';
 import App from './App';

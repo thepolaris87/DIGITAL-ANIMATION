@@ -58,9 +58,9 @@ export default function Timeline() {
                                     {i !== 0 && <Divider />}
                                     <Grid sx={{ p: 1 }} container alignItems='center'>
                                         <Grid sx={{ width: '150px', mr: 2 }} item>
-                                            <Typography className='jei-title'>ID : {dialog.data.src}</Typography>
+                                            <Typography className='dia-title'>ID : {dialog.data.src}</Typography>
                                             <Grid container>
-                                                <Typography sx={{ fontSize: '14px', whiteSpace: 'noWrap' }} className='jei-title'>{`${
+                                                <Typography sx={{ fontSize: '14px', whiteSpace: 'noWrap' }} className='dia-title'>{`${
                                                     koTTS && `KO : ${(Number(koTTS.duration || 0) / 1000).toFixed(2)} / `
                                                 }${enTTS && `EN : ${(Number(enTTS.duration || 0) / 1000).toFixed(2)}`}`}</Typography>
                                             </Grid>
@@ -99,7 +99,7 @@ export default function Timeline() {
                                         {object.data.effects.map((effect: EFFECTBASICFORM, j: number) => (
                                             <Grid key={effect.type + '-' + j} container alignItems='center'>
                                                 <Grid sx={{ width: '116px', p: 1 }} item>
-                                                    <Typography className='jei-subtitle' sx={{ color: '#F8B00C !important' }}>
+                                                    <Typography className='dia-subtitle' sx={{ color: '#F8B00C !important' }}>
                                                         {getDisplayName(effect.type)}
                                                     </Typography>
                                                 </Grid>

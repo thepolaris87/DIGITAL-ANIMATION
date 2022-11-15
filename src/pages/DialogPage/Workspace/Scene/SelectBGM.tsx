@@ -1,4 +1,4 @@
-import { Grid, Select, SelectChangeEvent, Typography, MenuItem, IconButton, Switch } from '@mui/material';
+import { Grid, Select, SelectChangeEvent, Typography, MenuItem, IconButton, Switch, Button } from '@mui/material';
 
 import type { GETSOUND } from '../../../../apis/api';
 import { useEffect, useMemo, useState } from 'react';
@@ -15,77 +15,68 @@ import { useQueryClient } from 'react-query';
 // 04 : background
 export default function SelectBGM() {
     const { data, currentDialog } = useSelector(selectDialog);
-    const queryClient = useQueryClient();
-    const soundData = queryClient.getQueryData<GETSOUND[]>(['dialog', 'sound']);
     const [isPlay, setIsPlay] = useState(false);
-    const soundList = useMemo(() => soundData?.filter((el) => el.soundDivisionCode === '04' || el.extension), [soundData]);
     const targetData = useMemo(() => data.dialog.find(({ id }) => id === currentDialog), [currentDialog, data]);
-    const soundBGM = useMemo(
-        () => targetData?.scene?.bgm && sound(`https://sol-api.esls.io/sounds/A1/${targetData?.scene?.bgm?.src}.${targetData?.scene?.bgm?.extension}`),
-        [targetData?.scene?.bgm]
-    );
+    const BGMSound = useMemo(() => targetData?.scene.bgm?.src && sound(targetData?.scene.bgm?.src), [targetData?.scene.bgm?.src]);
     const dispatch = useDispatch();
 
     const onUseBGMChange = (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
-        if (!soundList || soundList.length === 0) return;
-        if (!checked) dispatch(setBGM({ src: '', extension: '', soundDivisionCode: '' }));
-        else dispatch(setBGM({ src: soundList[0].soundId, extension: soundList[0].extension, soundDivisionCode: soundList[0].soundDivisionCode }));
+        dispatch(setBGM({ src: '', name: '' }));
     };
 
-    const onBGMChange = (e: SelectChangeEvent<any>) => {
-        if (soundList) {
-            const target = soundList.find((el) => el.soundId === e.target.value);
-            target && dispatch(setBGM({ src: target.soundId, extension: target.extension, soundDivisionCode: target.soundDivisionCode }));
-            onSoundStopClick();
+    const onBGMChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const uploadSound = e.target?.files?.[0];
+        if (uploadSound) {
+            const src = window.URL.createObjectURL(uploadSound);
+            dispatch(setBGM({ src, name: uploadSound.name }));
         }
+        onSoundStopClick();
     };
 
     const onSoundPlayClick = () => {
-        if (soundBGM) {
-            soundBGM.play();
-            soundBGM.audio.onended = () => setIsPlay(false);
+        if (BGMSound) {
+            BGMSound.play();
             setIsPlay(true);
         }
     };
 
     const onSoundStopClick = () => {
-        if (soundBGM) {
-            soundBGM?.stop();
+        if (BGMSound) {
+            BGMSound.stop();
             setIsPlay(false);
         }
     };
-
-    if (!soundList) return null;
 
     return (
         <>
             <Grid sx={{ mt: 2 }} container item alignItems='center' wrap='nowrap'>
                 <Grid sx={{ mr: 2, width: '110px' }} item>
-                    <Typography className='jei-title'>USE BGM</Typography>
+                    <Typography className='dia-title'>USE BGM</Typography>
                 </Grid>
                 <Switch checked={!!targetData?.scene?.bgm} onChange={onUseBGMChange} />
             </Grid>
             {!!targetData?.scene?.bgm && (
                 <Grid sx={{ mt: 2 }} container item alignItems='center' wrap='nowrap'>
                     <Grid sx={{ mr: 2, width: '110px' }} item>
-                        <Typography className='jei-title'>BGM</Typography>
+                        <Button variant='outlined' component='label'>
+                            Upload
+                            <input hidden accept='audio/*' type='file' onChange={onBGMChange} />
+                        </Button>
                     </Grid>
-                    <Select value={targetData?.scene.bgm?.src || soundList[0].soundId} size='small' onChange={onBGMChange} sx={{ background: 'white' }}>
-                        {soundList.map((el) => (
-                            <MenuItem key={el.soundId} value={el.soundId}>
-                                {el.soundId}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                    {!isPlay && (
-                        <IconButton onClick={onSoundPlayClick}>
-                            <PlayCircleIcon />
-                        </IconButton>
-                    )}
-                    {isPlay && (
-                        <IconButton onClick={onSoundStopClick}>
-                            <StopCircleIcon />
-                        </IconButton>
+                    {targetData.scene.bgm.name && (
+                        <Grid container alignItems='center'>
+                            <Typography className='dia-subtitle'>{targetData.scene.bgm.name}</Typography>
+                            {!isPlay && (
+                                <IconButton onClick={onSoundPlayClick}>
+                                    <PlayCircleIcon />
+                                </IconButton>
+                            )}
+                            {isPlay && (
+                                <IconButton onClick={onSoundStopClick}>
+                                    <StopCircleIcon />
+                                </IconButton>
+                            )}
+                        </Grid>
                     )}
                 </Grid>
             )}

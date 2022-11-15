@@ -1,187 +1,11 @@
-// import fabric from '../../../../../fabric';
 import { fabric } from 'fabric';
-import { EFFECTBASICFORM, totalFilters } from '../../../../slices/dialog';
 import { sound } from '../../../../utils/util';
 
-export const basicFontSize = 35;
-export const divisionCode = {
-    image: { background: '04', character: '05', sprite: '02', basic: '01', bubble: '06' },
-    text: { script: '04' },
-    sound: { tts: '02', background: '04', basic: '03' }
+export type EFFECTBASICFORM = {
+    type: string;
+    timeline: number[];
+    option?: { interval?: number; top?: number; left?: number; scaleX?: number; scaleY?: number; src?: string; extension?: string; from?: number; to?: number; angle?: number };
 };
-
-export const getImageCodeName = (code: string) =>
-    ({
-        [divisionCode.image.basic]: 'basic',
-        [divisionCode.image.sprite]: 'sprite',
-        [divisionCode.image.character]: 'character',
-        [divisionCode.image.background]: 'background'
-    }[code]);
-
-export const drawBackground = ({
-    canvas,
-    src,
-    data
-}: {
-    canvas: fabric.Canvas;
-    src: string;
-    data?: { id: string; type: string; imageDivisionCode: string; [key: string]: any };
-}) => {
-    if (!canvas) return;
-    const img = new Image();
-    img.src = src;
-
-    return new Promise<{ complete: boolean; object: fabric.Image }>((resolve) => {
-        img.onload = () => {
-            const backgroundImage = new fabric.Image(img, { data: { ...(data || {}) } });
-            canvas.setBackgroundImage(backgroundImage, () => {
-                canvas.renderAll();
-                resolve({ complete: true, object: backgroundImage });
-            });
-        };
-    });
-};
-
-export const removeBackground = ({ canvas }: { canvas: fabric.Canvas }) => {
-    canvas.backgroundImage = undefined;
-    canvas.renderAll();
-};
-
-export const drawImage = ({
-    canvas,
-    src,
-    attr,
-    data
-}: {
-    canvas: fabric.Canvas;
-    src: string;
-    attr?: fabric.IImageOptions;
-    id?: string;
-    type?: string;
-    data?: { id: string; type: string; imageDivisionCode: string; frame: string; [key: string]: any };
-}) => {
-    if (!canvas) return;
-    const img = new Image();
-    img.src = src;
-    img.crossOrigin = 'anonymous';
-
-    return new Promise<{ complete: boolean; object: fabric.Image }>((resolve) => {
-        img.onload = () => {
-            const object = new fabric.Image(img, {
-                ...attr,
-                originX: 'center',
-                originY: 'center',
-                data: { ...(data || {}) }
-            });
-            canvas.add(object);
-            canvas.renderAll();
-            resolve({ complete: true, object });
-        };
-    });
-};
-
-export const drawScript = ({
-    canvas,
-    script,
-    attr = {},
-    disabled = true,
-    data
-}: {
-    canvas: fabric.Canvas;
-    script: string;
-    attr?: fabric.ITextboxOptions;
-    disabled?: boolean;
-    data?: {
-        id: string;
-        type: string;
-        textDivisionCode?: string;
-        src?: string;
-        koTTS?: { src: string; extension: string; soundDivisionCode: string };
-        enTTS?: { src: string; extension: string; soundDivisionCode: string };
-        [key: string]: any;
-    };
-}) => {
-    if (!canvas) return;
-    const text = new fabric.Textbox(script, {
-        ...attr,
-        fontSize: basicFontSize,
-        data: { ...(data || {}) },
-        originX: 'center',
-        originY: 'center',
-        fontFamily: 'default',
-        lockScalingFlip: true,
-        lockScalingX: true,
-        lockScalingY: true,
-        lockSkewingX: true,
-        lockSkewingY: true,
-        lockUniScaling: true
-    });
-    if (disabled) text.onKeyDown = (e) => e.preventDefault();
-    canvas.add(text);
-    canvas.renderAll();
-};
-
-export const animation = {
-    sprite: ({ object, frameCount, width: _width }: { object: fabric.Image | fabric.Object; frameCount: number; width?: number }) => {
-        const { width } = object as { width: number };
-        const cropX = _width || width! / frameCount;
-
-        let currentFrame = 0;
-        let interval: ReturnType<typeof setInterval>;
-        let isAnimating = false;
-        object.set({ cropX: cropX * currentFrame, width: cropX });
-        object.canvas?.renderAll();
-
-        const animate = () => {
-            currentFrame += 1;
-            currentFrame %= frameCount;
-            object.set({ cropX: cropX * currentFrame, width: cropX });
-            object.canvas?.renderAll();
-        };
-        const start = () => {
-            if (isAnimating) return;
-            if (!isAnimating) {
-                interval = setInterval(animate, 1000 / frameCount);
-                isAnimating = true;
-            }
-        };
-
-        const stop = () => {
-            isAnimating = false;
-            clearInterval(interval);
-        };
-
-        return { start, stop };
-    }
-};
-
-export const textAnimation = {
-    typing: async ({ object, interval = 100 }: { object: fabric.Textbox; interval: number }) => {
-        const { _text } = object;
-        for (let index = 0; index < _text.length + 1; index++) {
-            object.text = _text.slice(0, index).reduce((p, c) => (p += c), '');
-            await new Promise((resolve) => setTimeout(resolve, interval));
-            object.canvas?.renderAll();
-        }
-    }
-};
-
-export const converToEffectTimelineFromAppearance = ([t1, t2]: number[]) => {
-    const hidden = [0, t1];
-    const visible = [t1, t2];
-    const disappear = [t2, t2 + 0.3];
-    const effects: EFFECTBASICFORM[] = [
-        { type: 'hidden', timeline: hidden },
-        { type: 'visible', timeline: visible },
-        { type: 'hidden', timeline: disappear }
-    ];
-    return effects;
-};
-
-export const timelineEasing = {
-    linear: ({ time, t1, t2, from, to }: { time: number; t1: number; t2: number; from: number; to: number }) => ((to - from) / (t2 - t1)) * (time - t1) + from
-};
-
 export type TIMELINEEFFECTTYPE = 'sound' | typeof totalFilters[number];
 export type TIMELINEDATA = {
     key: keyof fabric.Object | TIMELINEEFFECTTYPE;
@@ -195,10 +19,60 @@ export type TIMELINEDATA = {
     isPlayed?: boolean;
 };
 
+const totalFilters = ['brightness', 'noise', 'contrast', 'saturation'];
+
+export const converToEffectTimelineFromAppearance = ([t1, t2]: number[]) => {
+    const hidden = [0, t1];
+    const visible = [t1, t2];
+    const disappear = [t2, t2 + 0.3];
+    const effects: EFFECTBASICFORM[] = [
+        { type: 'hidden', timeline: hidden },
+        { type: 'visible', timeline: visible },
+        { type: 'hidden', timeline: disappear }
+    ];
+    return effects;
+};
+
+export const sprite = ({ object, frameCount, width: _width }: { object: fabric.Image | fabric.Object; frameCount: number; width?: number }) => {
+    const { width } = object as { width: number };
+    const cropX = _width || width! / frameCount;
+
+    let currentFrame = 0;
+    let interval: ReturnType<typeof setInterval>;
+    let isAnimating = false;
+    object.set({ cropX: cropX * currentFrame, width: cropX });
+    object.canvas?.renderAll();
+
+    const animate = () => {
+        currentFrame += 1;
+        currentFrame %= frameCount;
+        object.set({ cropX: cropX * currentFrame, width: cropX });
+        object.canvas?.renderAll();
+    };
+    const start = () => {
+        if (isAnimating) return;
+        if (!isAnimating) {
+            interval = setInterval(animate, 1000 / frameCount);
+            isAnimating = true;
+        }
+    };
+
+    const stop = () => {
+        isAnimating = false;
+        clearInterval(interval);
+    };
+
+    return { start, stop };
+};
+
+export const timelineEasing = {
+    linear: ({ time, t1, t2, from, to }: { time: number; t1: number; t2: number; from: number; to: number }) => ((to - from) / (t2 - t1)) * (time - t1) + from
+};
+
 export const createTimeline = ({ effects, object }: { effects: EFFECTBASICFORM[]; object: any }) => {
     const timelineData: TIMELINEDATA[] = [];
     const endTime = effects.reduce((p, c) => (c.timeline[1] > p ? c.timeline[1] : p), 0);
-    const { top, left, opacity, scaleX, scaleY, filters = [], angle } = object;
+    const { top, left, opacity, scaleX, scaleY, filters = [],angle } = object;
     const cloneData = { ...object };
     const copyFilters = [...filters];
 
@@ -247,8 +121,8 @@ export const createTimeline = ({ effects, object }: { effects: EFFECTBASICFORM[]
             }
             timelineData.push({ key: 'opacity', t1: t2, t2: t2 + interval * 1000, from: 1, to: 1 });
         }
-        if (type === 'sound' && option?.src) {
-            const audio = sound(option.src);
+        if (type === 'sound' && option) {
+            const audio = sound(`https://sol-api.esls.io/sounds/A1/${option.src}.${option.extension}`);
             audio.audio.loop = true;
             timelineData.push({ ...data, key: 'sound', ...audio });
         }
@@ -322,17 +196,20 @@ export const createTimeline = ({ effects, object }: { effects: EFFECTBASICFORM[]
 
     const init = () => {
         object.set({ top, left, opacity, scaleX, scaleY, filters: copyFilters, angle });
-        object.applyFilters?.();
-        if (['text'].includes(object.data.type)) (object as fabric.Object).set('opacity', 1);
+        object?.applyFilters?.();
         timelineData.forEach((data) => data?.stop?.());
         object.canvas?.renderAll();
     };
 
-    return { excute, init, endTime: Math.floor(endTime * 1000) };
+    return { excute, init, endTime: Math.floor(endTime * 1000), timelineData };
 };
 
 export const requestAnimation = ({
     duration: endValue,
+    onStart,
+    onStop,
+    onPause,
+    onResume,
     onChange,
     onComplete,
     easing: _easing
@@ -341,6 +218,10 @@ export const requestAnimation = ({
     onChange?: (value: number) => void;
     onComplete?: () => void;
     easing?: () => void;
+    onStart?: () => void;
+    onStop?: () => void;
+    onPause?: (currentTime: number) => void;
+    onResume?: (currentTime: number) => void;
 }) => {
     const easing = (currentTime: number, from: number, to: number, duration: number) => currentTime;
     const interval = 10;
@@ -351,20 +232,24 @@ export const requestAnimation = ({
     const start = () => {
         _isPlay = true;
         cancel = animate(0, endValue);
+        onStart?.();
         return cancel;
     };
     const pause = () => {
         _isPlay = false;
         cancel?.();
+        onPause?.(_currentTime);
     };
     const stop = () => {
         _currentTime = 0;
         _isPlay = false;
         cancel?.();
+        onStop?.();
     };
     const resume = () => {
         _isPlay = true;
         cancel = animate(_currentTime, endValue - _currentTime);
+        onResume?.(_currentTime);
     };
     const animate = (currentTime: number, duration: number) =>
         fabric.util.animate({
@@ -383,4 +268,24 @@ export const requestAnimation = ({
         });
 
     return { start, pause, stop, resume };
+};
+
+export const createTimelineData = (canvas: fabric.Canvas) => {    
+    const timelines: ReturnType<typeof createTimeline>[] = [];
+    const sprites: ReturnType<typeof sprite>[] = [];
+    const sounds: (ReturnType<typeof sound> & { isPlayed: boolean; time: number })[] = [];
+    canvas.forEachObject((object) => {
+        if (object.data.type === 'sprite') {
+            const data = object.get('data');
+            const frameCount = Number(object.data.frame);
+            const width = object.get('width');
+            object.set('data', { ...data, sprite: sprite({ object, frameCount, width }) });
+        }
+
+        if (['character', 'basic', 'text', 'sprite'].includes(object.data.type) && object.data?.effects) {
+            timelines.push(createTimeline({ effects: object.data.effects, object }));
+        }        
+        if (['sprite'].includes(object.data.type)) sprites.push(object.data.sprite);
+    });
+    return { timelines, sprites, sounds };
 };

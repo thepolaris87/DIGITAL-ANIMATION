@@ -21,7 +21,7 @@ export default function SelectTTS({ object }: { object: fabric.Textbox }) {
         const target = soundList.find((el) => el.soundId === e.target.value);
         const data = object.get('data');
         if (target) {
-            const _sound = sound(`https://sol-api.esls.io/sounds/A1/${target.soundId}.${target.extension}`);
+            const _sound = sound(`${process.env.REACT_APP_API}/sounds/A1/${target.soundId}.${target.extension}`);
             const _tts = { src: target.soundId, soundDivisionCode: target.soundDivisionCode, extension: target.extension };
             if (locale === 'ko') {
                 object.set('data', { ...data, koTTS: _tts });
@@ -68,8 +68,8 @@ export default function SelectTTS({ object }: { object: fabric.Textbox }) {
 
     useEffect(() => {
         if (!tts) {
-            const ko = object.data.koTTS.src !== 'none' ? sound(`https://sol-api.esls.io/sounds/A1/${object.data.koTTS.src}.${object.data.koTTS.extension}`) : undefined;
-            const en = object.data.enTTS.src !== 'none' ? sound(`https://sol-api.esls.io/sounds/A1/${object.data.enTTS.src}.${object.data.enTTS.extension}`) : undefined;
+            const ko = object.data.koTTS.src !== 'none' ? sound(`${process.env.REACT_APP_API}/sounds/A1/${object.data.koTTS.src}.${object.data.koTTS.extension}`) : undefined;
+            const en = object.data.enTTS.src !== 'none' ? sound(`${process.env.REACT_APP_API}/sounds/A1/${object.data.enTTS.src}.${object.data.enTTS.extension}`) : undefined;
             setTTS({ ko, en });
         }
     }, [tts, object]);
@@ -80,7 +80,7 @@ export default function SelectTTS({ object }: { object: fabric.Textbox }) {
         <Grid sx={{ mb: 1 }} container>
             <Grid sx={{ flex: 1 }} container alignItems='center' wrap='nowrap'>
                 <Grid sx={{ minWidth: '60px', mr: 2 }} item>
-                    <Typography className='jei-title'>KO TTS</Typography>
+                    <Typography className='dia-title'>KO TTS</Typography>
                 </Grid>
                 <Grid container wrap='nowrap'>
                     <Select sx={{ mr: 1 }} value={object.data.koTTS.src} size='small' onChange={(e) => onTTSChange(e, 'ko')}>
@@ -105,7 +105,7 @@ export default function SelectTTS({ object }: { object: fabric.Textbox }) {
             </Grid>
             <Grid sx={{ flex: 1 }} container alignItems='center' wrap='nowrap'>
                 <Grid sx={{ minWidth: '60px', mr: 2 }} item>
-                    <Typography className='jei-title'>EN TTS</Typography>
+                    <Typography className='dia-title'>EN TTS</Typography>
                 </Grid>
                 <Grid container wrap='nowrap'>
                     <Select sx={{ mr: 1 }} value={object.data.enTTS.src} size='small' onChange={(e) => onTTSChange(e, 'en')}>

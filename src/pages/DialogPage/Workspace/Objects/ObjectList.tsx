@@ -1,18 +1,11 @@
 import { Box, Grid } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDialog, IMAGEBASICFORM, setCurrentTarget } from '../../../../slices/dialog';
-import { divisionCode } from '../../View/Canvas/helper';
 import { ObjectsView } from '../Workspace.styles';
 
 export default function ObjectList() {
     const { currentDialog, render, currentTarget } = useSelector(selectDialog);
-    const imageObjects = render?.[currentDialog]
-        ?.getObjects()
-        .filter(
-            (el) =>
-                [divisionCode.image.background, divisionCode.image.basic, divisionCode.image.sprite, divisionCode.image.character].includes(el.data.imageDivisionCode) ||
-                el.data.type === 'text'
-        );
+    const imageObjects = render?.[currentDialog]?.getObjects().filter((object) => ['text', 'basic'].includes(object.data.type));
     const dispatch = useDispatch();
 
     const onImageClick = (image: IMAGEBASICFORM) => {

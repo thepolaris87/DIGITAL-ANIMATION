@@ -19,7 +19,7 @@ export default function ObjectTimeline({ timeline, disabled }: { timeline: Retur
     return (
         <Grid container alignItems='center'>
             <Grid sx={{ pl: 1, width: '220px' }} item>
-                <Typography className='jei-title' align='center'>
+                <Typography className='dia-title' align='center'>
                     {disabled ? 'PROGRESS' : 'TIME LINE'}
                 </Typography>
             </Grid>

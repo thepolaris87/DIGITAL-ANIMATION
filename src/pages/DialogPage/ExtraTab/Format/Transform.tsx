@@ -105,7 +105,7 @@ export default function Transform() {
             </Grid>
             {!currentTarget?.object?.lockScalingFlip && (
                 <Grid sx={{ p: '8px 24px' }} container alignItems='center'>
-                    <Typography sx={{ mr: 2 }} className='jei-subtitle'>
+                    <Typography sx={{ mr: 2 }} className='dia-subtitle'>
                         FLIP
                     </Typography>
                     <IconButton onClick={() => onFlipClick('flipX')}>

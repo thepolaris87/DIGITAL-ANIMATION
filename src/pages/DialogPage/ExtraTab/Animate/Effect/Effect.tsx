@@ -227,7 +227,7 @@ export default function Effect({ object }: { object: fabric.Object }) {
                         <Button sx={{ m: 1, borderRadius: '8px' }} size='small' color='warning' variant='contained' onClick={onPlayClick}>
                             {!!cancel ? 'STOP' : 'PLAY'}
                         </Button>
-                        <Typography sx={{ ml: 1 }} className='jei-subtitle'>
+                        <Typography sx={{ ml: 1 }} className='dia-subtitle'>
                             {(time / 1000).toFixed(2)}s
                         </Typography>
                     </Grid>

@@ -40,8 +40,8 @@ export default function FontFamily() {
                 end = currentTarget.object.selectionEnd || 0;
             }
             const currentFontFamily = currentTarget.object.getSelectionStyles(start, end).reduce((p, c, i) => {
-                if (i === 0) return c.strokeWidth;
-                return p === c.strokeWidth ? p : defaultFont.name;
+                if (i === 0) return c.fontFamily;
+                return p === c.fontFamily ? p : defaultFont.name;
             }, defaultFont.name);
             setValue(currentFontFamily);
         }

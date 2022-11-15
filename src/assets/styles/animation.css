@@ -1,0 +1,40 @@
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes flyOutRight {
+    from {
+        left: 0;
+    }
+    to {
+        left: 110%;
+    }
+}
+@keyframes flyOutLeft {
+    from {
+        left: 0;
+    }
+    to {
+        left: -110%;
+    }
+}
+@keyframes flyOutTop {
+    from {
+        top: 0;
+    }
+    to {
+        top: -110%;
+    }
+}
+@keyframes flyOutBottom {
+    from {
+        top: 0;
+    }
+    to {
+        top: 110%;
+    }
+}

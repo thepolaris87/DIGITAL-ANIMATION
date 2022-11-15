@@ -22,7 +22,7 @@ export default function Format() {
         <List>
             <ListSubheader>
                 <Grid container justifyContent='space-between' alignItems='center'>
-                    <Typography className='jei-title'>FORMAT</Typography>
+                    <Typography className='dia-title'>FORMAT</Typography>
                     <IconButton onClick={onCloseIconClick}>
                         <Close />
                     </IconButton>

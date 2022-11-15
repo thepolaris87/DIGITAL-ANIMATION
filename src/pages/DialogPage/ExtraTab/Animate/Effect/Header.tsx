@@ -38,7 +38,7 @@ export default function Header({
                 <IconButton onClick={onCollapseIconClick}>{collapse ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>
             </Grid>
             <Grid sx={{ ml: 1, flex: 1 }} item>
-                <Typography className='jei-subtitle' sx={{ color: '#F8B00C !important' }}>
+                <Typography className='dia-subtitle' sx={{ color: '#F8B00C !important' }}>
                     {getDisplayName(type)}
                 </Typography>
             </Grid>

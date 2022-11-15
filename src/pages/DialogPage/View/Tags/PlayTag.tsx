@@ -9,7 +9,7 @@ import { animation, converToEffectTimelineFromAppearance, createTimeline, reques
 import { Tag, Tooltip } from './Tags.styles';
 
 export default function PlayTag({ id }: { id: string }) {
-    const { render, locale, data } = useSelector(selectDialog);
+    const { render, data } = useSelector(selectDialog);
     const [isPlay, setIsPlay] = useState(false);
     const [cancel, setCancel] = useState<any>();
     const [time, setTime] = useState(0);
@@ -33,27 +33,7 @@ export default function PlayTag({ id }: { id: string }) {
             // CREATE IMAGE TIMELINE
             if (['character', 'basic', 'text', 'sprite'].includes(object.data.type) && object.data?.effects) {
                 timelines.push(createTimeline({ effects: object.data.effects, object }));
-            }
-            if (['script'].includes(object.data.type) && object.data?.effect) {
-                const effects = converToEffectTimelineFromAppearance(object.data.effect.appearance);
-                timelines.push(createTimeline({ effects, object }));
-                if (locale === 'ko' && object.data?.koTTS.src !== 'none') {
-                    const _sound = sound(`https://sol-api.esls.io/sounds/A1/${object.data.koTTS.src}.${object.data.koTTS.extension}`);
-                    sounds.push({
-                        ..._sound,
-                        isPlayed: false,
-                        time: object.data.effect.appearance[0] * 1000
-                    });
-                }
-                if (locale === 'en' && object.data?.enTTS.src !== 'none') {
-                    const _sound = sound(`https://sol-api.esls.io/sounds/A1/${object.data.enTTS.src}.${object.data.enTTS.extension}`);
-                    sounds.push({
-                        ..._sound,
-                        isPlayed: false,
-                        time: object.data.effect.appearance[0] * 1000
-                    });
-                }
-            }
+            }            
             if (['sprite'].includes(object.data.type)) {
                 sprites.push(object.data.sprite);
             }

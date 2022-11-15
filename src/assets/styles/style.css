@@ -45,12 +45,12 @@ img {
 }
 
 /* material-theme으로 빼기 */
-.jei-title {
+.dia-title {
     color: #757575 !important;
     font-weight: bold !important;
 }
 
-.jei-subtitle {
+.dia-subtitle {
     color: #757575 !important;
     font-weight: normal !important;
 }

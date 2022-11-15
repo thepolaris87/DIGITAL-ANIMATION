@@ -21,7 +21,7 @@ export default function Text() {
     return (
         <Tooltip componentsProps={{ tooltip: { sx: { position: 'relative', top: '-16px' } } }} title='text' placement='bottom-end'>
             <span>
-                <IconButton onClick={onAddTextClick}>
+                <IconButton onClick={onAddTextClick} disabled={!render || !currentDialog}>
                     <TextIncreaseIcon />
                 </IconButton>
             </span>

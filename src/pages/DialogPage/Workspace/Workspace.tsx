@@ -14,7 +14,7 @@ export default function Workspace() {
 
     if (!currentDialog)
         return (
-            <Typography className='jei-subtitle' sx={{ mt: 5, fontSize: '24px' }} align='center'>
+            <Typography className='dia-subtitle' sx={{ mt: 5, fontSize: '24px' }} align='center'>
                 SCENE을 선택해주세요.
             </Typography>
         );
@@ -23,8 +23,7 @@ export default function Workspace() {
         <Box>
             <Navigator />
             {navi === 'scene' && <Scene />}
-            {navi === 'objects' && <Objects />}
-            {navi === 'dialogs' && <Script />}
+            {navi === 'objects' && <Objects />}            
             {navi === 'master' && <Master />}
         </Box>
     );

@@ -18,7 +18,7 @@ export default function DialogAnimate() {
         <List>
             <ListSubheader>
                 <Grid container justifyContent='space-between' alignItems='center'>
-                    <Typography className='jei-title'>DIALOG ANIMATE</Typography>
+                    <Typography className='dia-title'>DIALOG ANIMATE</Typography>
                     <IconButton onClick={onCloseIconClick}>
                         <CloseIcon />
                     </IconButton>

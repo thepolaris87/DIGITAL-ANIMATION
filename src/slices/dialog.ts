@@ -31,7 +31,7 @@ export type DATADIALOG = {
     scene: {
         effect: { type: string; duration: number };
         cutAway: 'click' | 'auto';
-        bgm?: { src: string; extension: string; soundDivisionCode: string };
+        bgm?: { src: string; name: string;  };
     };
     canvas?: { objects: any[]; backgroundImage: any };
     master?: boolean;

@@ -16,8 +16,7 @@ export default function Navigator() {
     return (
         <Box>
             <Tabs value={navi} onChange={onNaviChange} TabIndicatorProps={{ style: { backgroundColor: navi === 'master' ? orange[900] : '#1976d2' } }}>
-                <Tab label='SCENE' value='scene' disabled={isMaster} />
-                <Tab label='DIALOGS' value='dialogs' disabled={isMaster} />
+                <Tab label='SCENE' value='scene' disabled={isMaster} />                
                 <Tab label='OBJECTS' value='objects' disabled={isMaster} />
                 <Tab
                     label={

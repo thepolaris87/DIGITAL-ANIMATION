@@ -79,7 +79,7 @@ export default function Shadow() {
     return (
         <Box sx={{ px: 3 }}>
             <Grid container alignItems='center'>
-                <Typography className='jei-subtitle' sx={{ flex: 1 }}>
+                <Typography className='dia-subtitle' sx={{ flex: 1 }}>
                     COLOR
                 </Typography>
                 <Checkbox checked={useShadow} onChange={onUseShadowChange} />
@@ -91,13 +91,13 @@ export default function Shadow() {
                 </Button>
             </Grid>
             <Box sx={{ position: 'relative' }}>{colorPickerOpen && <ColorPicker onClick={onColorPickerClick} initialColor={shadow.color} />}</Box>
-            <Typography className='jei-subtitle'>OPACITY</Typography>
+            <Typography className='dia-subtitle'>OPACITY</Typography>
             <Slider sx={{ flex: 1 }} min={0} max={1} step={0.1} size='small' valueLabelDisplay='auto' value={shadow.opacity} onChange={onOpacityChange} disabled={!useShadow} />
-            <Typography className='jei-subtitle'>HORIZONTAL</Typography>
+            <Typography className='dia-subtitle'>HORIZONTAL</Typography>
             <Slider min={-25} max={25} step={0.1} size='small' valueLabelDisplay='auto' value={shadow.dx} onChange={onHorizontalChange} disabled={!useShadow} />
-            <Typography className='jei-subtitle'>VERTICAL</Typography>
+            <Typography className='dia-subtitle'>VERTICAL</Typography>
             <Slider min={-25} max={25} step={0.1} size='small' valueLabelDisplay='auto' value={shadow.dy} onChange={onVerticalChange} disabled={!useShadow} />
-            <Typography className='jei-subtitle'>BLUR</Typography>
+            <Typography className='dia-subtitle'>BLUR</Typography>
             <Slider min={0} max={50} step={0.1} size='small' valueLabelDisplay='auto' value={shadow.blur} onChange={onBlurChange} disabled={!useShadow} />
         </Box>
     );

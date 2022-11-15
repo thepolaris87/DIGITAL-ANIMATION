@@ -49,7 +49,7 @@ export default function MasterControl() {
     return (
         <Grid sx={{ mt: 2 }} container item alignItems='center' wrap='nowrap'>
             <Grid sx={{ mr: 2, width: '110px' }} item>
-                <Typography className='jei-title'>MASTER</Typography>
+                <Typography className='dia-title'>MASTER</Typography>
             </Grid>
             <Switch checked={Boolean(masterCheck)} onChange={handleChange} />
         </Grid>

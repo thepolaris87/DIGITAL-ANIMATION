@@ -27,7 +27,7 @@ export default function Appearance({ object, progress, disabled }: { object: fab
         <Box>
             <Grid sx={{ p: '0 8px' }} container alignItems='center' wrap='nowrap'>
                 <Grid sx={{ width: '150px', mr: 2 }} item>
-                    <Typography className='jei-title'>{!!disabled ? 'PROGRESS' : 'APPEARANCE'}</Typography>
+                    <Typography className='dia-title'>{!!disabled ? 'PROGRESS' : 'APPEARANCE'}</Typography>
                 </Grid>
                 <Grid sx={{ flex: 1, position: 'relative' }} item>
                     {!!disabled && <LinearProgress sx={{ position: 'absolute', inset: '0', height: '85%' }} variant='determinate' value={progress} />}
@@ -45,10 +45,10 @@ export default function Appearance({ object, progress, disabled }: { object: fab
                 </Grid>
             </Grid>
             <Grid sx={{ p: '0 8px' }} container>
-                <Typography sx={{ flex: 1 }} className='jei-title'>
+                <Typography sx={{ flex: 1 }} className='dia-title'>
                     KO: {ttsDuration.ko}s
                 </Typography>
-                <Typography sx={{ flex: 1 }} className='jei-title'>
+                <Typography sx={{ flex: 1 }} className='dia-title'>
                     EN: {ttsDuration.en}s
                 </Typography>
             </Grid>

@@ -37,9 +37,11 @@ export default function Grid() {
 
     return (
         <Tooltip componentsProps={{ tooltip: { sx: { position: 'relative', top: '-16px' } } }} title='grid' placement='bottom-end'>
-            <IconButton onClick={onGridClick}>
-                <Grid4x4Icon />
-            </IconButton>
+            <span>
+                <IconButton onClick={onGridClick} disabled={!render?.[currentDialog] || !data}>
+                    <Grid4x4Icon />
+                </IconButton>
+            </span>
         </Tooltip>
     );
 }

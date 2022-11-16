@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b240a42.css",
-    "main.js": "/static/js/main.c801d7f6.js",
-    "static/js/787.2dd3e2df.chunk.js": "/static/js/787.2dd3e2df.chunk.js",
-    "static/media/ONEMobilePOP.ttf": "/static/media/ONEMobilePOP.5297395c69466801c11f.ttf",
-    "static/media/NanumSquareRoundR.ttf": "/static/media/NanumSquareRoundR.f062cb52be3e9829834c.ttf",
-    "static/media/NanumSquareRoundB.ttf": "/static/media/NanumSquareRoundB.8ab117fc37409bd022e5.ttf",
-    "static/media/NanumSquareRoundEB.ttf": "/static/media/NanumSquareRoundEB.ef4043133d5b2d0febb4.ttf",
-    "static/media/NanumSquareRoundL.ttf": "/static/media/NanumSquareRoundL.34b53f3711c695552994.ttf",
-    "index.html": "/index.html",
-    "main.1b240a42.css.map": "/static/css/main.1b240a42.css.map",
-    "main.c801d7f6.js.map": "/static/js/main.c801d7f6.js.map",
-    "787.2dd3e2df.chunk.js.map": "/static/js/787.2dd3e2df.chunk.js.map"
+    "main.css": "/DIGITAL-ANIMATION/build/static/css/main.86fe6aa7.css",
+    "main.js": "/DIGITAL-ANIMATION/build/static/js/main.a321cbf1.js",
+    "static/js/787.2dd3e2df.chunk.js": "/DIGITAL-ANIMATION/build/static/js/787.2dd3e2df.chunk.js",
+    "static/media/ONEMobilePOP.ttf": "/DIGITAL-ANIMATION/build/static/media/ONEMobilePOP.5297395c69466801c11f.ttf",
+    "static/media/NanumSquareRoundR.ttf": "/DIGITAL-ANIMATION/build/static/media/NanumSquareRoundR.f062cb52be3e9829834c.ttf",
+    "static/media/NanumSquareRoundB.ttf": "/DIGITAL-ANIMATION/build/static/media/NanumSquareRoundB.8ab117fc37409bd022e5.ttf",
+    "static/media/NanumSquareRoundEB.ttf": "/DIGITAL-ANIMATION/build/static/media/NanumSquareRoundEB.ef4043133d5b2d0febb4.ttf",
+    "static/media/NanumSquareRoundL.ttf": "/DIGITAL-ANIMATION/build/static/media/NanumSquareRoundL.34b53f3711c695552994.ttf",
+    "index.html": "/DIGITAL-ANIMATION/build/index.html",
+    "main.86fe6aa7.css.map": "/DIGITAL-ANIMATION/build/static/css/main.86fe6aa7.css.map",
+    "main.a321cbf1.js.map": "/DIGITAL-ANIMATION/build/static/js/main.a321cbf1.js.map",
+    "787.2dd3e2df.chunk.js.map": "/DIGITAL-ANIMATION/build/static/js/787.2dd3e2df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b240a42.css",
-    "static/js/main.c801d7f6.js"
+    "static/css/main.86fe6aa7.css",
+    "static/js/main.a321cbf1.js"
   ]
 }
